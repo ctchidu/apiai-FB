@@ -15,7 +15,7 @@ var fulfillmentRequest = function(request, response) {
         console.log('Valid fulfillment request received.');
         var action = body.result.action;
         var parameters = body.result.parameters;
-        var vvalue = body.result.parameters.vechiles;
+        var vvalue = body.result.parameters.sports-items;
         var acceptedarray = ["Archery equipment – bows and arrows","Archery","Archery equipment","bows","arrows","Avalanche rescue equipment","Avalanche","Bicycles","cycle","cycles",
 "Boating/Fishing equipment","Boating","Fishing","Boogie boards","skateboards","Skates","snowboards","Surfboards","paddleboards","kiteboards",
 "wakeboards","Broomball","Golf Clubs","golf","Kayaking","Kayaking equipment","Parachutes","parachuting","Racquets","badminton","squash","tennis","Scuba diving",
