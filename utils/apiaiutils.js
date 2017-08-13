@@ -40,6 +40,14 @@ var fulfillmentRequest = function(request, response) {
                         }
                 response.json(json);
                 break;
+                
+             case 'sportsall':
+                
+                var json = formatApiaiResponse(speech='We’re happy to accommodate a wide range of sports equipment on our flights.',
+                displayText='We’re happy to accommodate a wide range of sports equipment on our flights.')  
+                
+             response.json(json);
+             break;   
         }
     }
 }
