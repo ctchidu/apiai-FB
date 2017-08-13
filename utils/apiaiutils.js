@@ -46,7 +46,8 @@ var fulfillmentRequest = function(request, response) {
              case 'sportsall':
                     fs.readFile( './sportsallitems.txt', function(err, data) {
                         console.log(data);
-                        var json = formatApiaiResponse(speech = data,displayText = data) 
+                        var jsondata = JSON.parse(data);
+                        var json = formatApiaiResponse(speech = jsondata,displayText = jsondata) 
                      });                                
              response.json(json);
              break;   
