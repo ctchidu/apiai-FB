@@ -30,7 +30,7 @@ var fulfillmentRequest = function(request, response) {
         
         
         switch(body.result.action) {
-            case 'guess.name':
+            case 'sports.items':
                 if (acceptedarray.indexOf(vvalue) > -1) {
                      var json = formatApiaiResponse(speech='Yes, you can carry. It is  accepted as checked baggage.', displayText='Yes, you can carry. It is  accepted as checked baggage.')
                   } else if(rejectedarray.indexOf(vvalue) > -1){
