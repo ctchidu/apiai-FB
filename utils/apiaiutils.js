@@ -44,11 +44,10 @@ var fulfillmentRequest = function(request, response) {
                 break;
                 
              case 'sportsall':
-                    fs.readFile( './sportsallitems.txt', function(err, data) {
-                        console.log(data);
-                        var jsondata = JSON.parse(data);
-                        var json = formatApiaiResponse(speech = jsondata,displayText = jsondata) 
-                     });                                
+             
+                var str = fs.readFileSync('./sportsallitems.txt', 'utf8');
+                console.log(str);
+                var json = formatApiaiResponse(speech = str,displayText = str)
              response.json(json);
              break;   
         }
