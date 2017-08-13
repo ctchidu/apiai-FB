@@ -17,7 +17,7 @@ var fulfillmentRequest = function(request, response) {
         var parameters = body.result.parameters;
         switch(body.result.action) {
             case 'guess.name':
-                var json = formatApiaiResponse(speech='Your name is Bill.', displayText='Your name is Bill.')
+                var json = formatApiaiResponse(speech='Yes,you can carry. It is  accepted as checked baggage.', displayText='Yes,you can carry. It is  accepted as checked baggage.')
                 response.json(json);
                 break;
         }
