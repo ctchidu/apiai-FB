@@ -16,10 +16,11 @@ var fulfillmentRequest = function(request, response) {
         var action = body.result.action;
         var parameters = body.result.parameters;
         var vvalue = body.result.parameters.vechiles;
-        var acceptedarray = [];
-        acceptedarray.push('car');
-        acceptedarray.push('bike');
-        acceptedarray.push('cycle');
+        var acceptedarray = [
+        "car",
+        "bike",
+        "cycle"
+        ];
         console.log(vvalue);
         console.log(acceptedarray);
         switch(body.result.action) {
