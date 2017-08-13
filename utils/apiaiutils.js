@@ -25,7 +25,11 @@ var fulfillmentRequest = function(request, response) {
         console.log(acceptedarray);
         switch(body.result.action) {
             case 'guess.name':
-                var json = formatApiaiResponse(speech='Yes,you can carry. It is  accepted as checked baggage.', displayText='Yes,you can carry. It is  accepted as checked baggage.')
+                if (acceptedarray.indexOf(vvalue) > -1) {
+                     var json = formatApiaiResponse(speech='Yes,you can carry. It is  accepted as checked baggage.', displayText='Yes,you can carry. It is  accepted as checked baggage.')
+                  } else {
+                         var json = formatApiaiResponse(speech='No', displayText='No')
+                }               
                 response.json(json);
                 break;
         }
