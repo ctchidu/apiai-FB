@@ -16,7 +16,12 @@ var fulfillmentRequest = function(request, response) {
         var action = body.result.action;
         var parameters = body.result.parameters;
         var vvalue = body.result.parameters.vechiles;
+        var acceptedarray = [];
+        acceptedarray.push('car');
+        acceptedarray.push('bike');
+        acceptedarray.push('cycle');
         console.log(vvalue);
+        console.log(acceptedarray);
         switch(body.result.action) {
             case 'guess.name':
                 var json = formatApiaiResponse(speech='Yes,you can carry. It is  accepted as checked baggage.', displayText='Yes,you can carry. It is  accepted as checked baggage.')
