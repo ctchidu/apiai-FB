@@ -24,6 +24,11 @@ var fulfillmentRequest = function(request, response) {
         
     var rejectedarray = ["Bobsleighs","Canoes","Hang gliders","Luges","Vaulting poles","Windsurfing equipment","Windsurfing","gliders"];
         
+        console.log(vvalue);
+         console.log(acceptedarray.indexOf(vvalue));
+          console.log(rejectedarray.indexOf(vvalue));   
+        
+        
         switch(body.result.action) {
             case 'guess.name':
                 if (acceptedarray.indexOf(vvalue) > -1) {
