@@ -41,6 +41,10 @@ var fulfillmentRequest = function(request, response) {
                           var json = formatApiaiResponse(speech='Sorry not able to answer you.', displayText='Sorry not able to answer you.')  
                         }
                 response.json(json);
+                var a=formatApiaiResponse(speech='first', displayText='first')  
+                var b=formatApiaiResponse(speech='second', displayText='second')
+                response.json(a);
+                response.json(b);
                 break;
                 
              case 'sportsall':
