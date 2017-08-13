@@ -4,7 +4,7 @@ config.apiaitoken = 'b42695de653e43cbb9c0fd67f5c7c2c9'
 
 config.facebook = {
     verification_token : '123456789123',
-    pageAccessToken : 'EAAN8EsO9Rw8BAP82TwshYWerjgbtXQE1qIf4IZBC7ZBsY68CqHZB9GtpdPuaVys3lJkMq3ZChq9QeX1ZB3q8OPiR9ZCZAyQneQQekaETY8EyKrlDWPVZAKvVm8sOJkMfHZAHwv9HdhFeHRotvody4P3NvWGqtWaSqvcVp8xbTdq9aOwZDZD'
+    pageAccessToken : 'EAAU92VlQu5gBANE4l4jQ0tKPkObUyAFttybmmnEOapEVA3aiM7TcAWYZCRn1uT4uPhZCJZB4Kg4R8NLoOIIgpdFpWyyBxUVzKXPzZAa2IeuIzCTzRQ6DLZCir7TOElXNZAecJKncWJTp6UVSfEB4ZB8eb4rP3pxzsWIdigX0FbvNAZDZD'
 }
 
 module.exports = config
