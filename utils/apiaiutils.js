@@ -26,11 +26,8 @@ var fulfillmentRequest = function(request, response) {
         
     var rejectedarray = ["Bobsleighs","Canoes","Hang gliders","Luges","Vaulting poles","Windsurfing equipment","Windsurfing","gliders"];
         
-        console.log(vvalue);
-         console.log(acceptedarray.indexOf(vvalue));
-          console.log(rejectedarray.indexOf(vvalue));   
-        
-        
+        console.log(vvalue);  
+                
         switch(body.result.action) {
             case 'sports.items':
                 if (acceptedarray.indexOf(vvalue) > -1) {
@@ -41,19 +38,27 @@ var fulfillmentRequest = function(request, response) {
                           var json = formatApiaiResponse(speech='Sorry not able to answer you.', displayText='Sorry not able to answer you.')  
                         }
                 response.json(json);
-                var a=formatApiaiResponse(speech='first', displayText='first')  
-                var b=formatApiaiResponse(speech='second', displayText='second')
-                response.json(a);
-                response.json(b);
-                break;
                 
              case 'sportsall':
-             
-                var str = fs.readFileSync('./sportsallitems.txt', 'utf8');
-                console.log(str);
-                var json = formatApiaiResponse(speech = str,displayText = str)
-             response.json(json);
-             break;   
+                var specialitems = body.result.parameters.specialitems;
+                if(specialitems == 'sports'){
+                        var str = fs.readFileSync('./sportsallitems.txt', 'utf8');
+                        var json = formatApiaiResponse(speech = str,displayText = str)
+                    }
+                if(specialitems == 'music'){
+                        var str = fs.readFileSync('./music.txt', 'utf8');
+                        var json = formatApiaiResponse(speech = str,displayText = str)
+                    }
+                if(specialitems == 'hunting'){
+                        var str = fs.readFileSync('./hunting.txt', 'utf8');
+                        var json = formatApiaiResponse(speech = str,displayText = str)
+                    }
+                if(specialitems == 'carryon'){
+                        var str = fs.readFileSync('./carryon.txt', 'utf8');
+                        var json = formatApiaiResponse(speech = str,displayText = str)
+                    }
+                response.json(json);
+                break;   
         }
     }
 }
