@@ -1,3 +1,5 @@
+fs = require('fs')
+
 function formatApiaiResponse(speech, displayText) {
     return {
         "speech": speech,
@@ -42,10 +44,10 @@ var fulfillmentRequest = function(request, response) {
                 break;
                 
              case 'sportsall':
-                
-                var json = formatApiaiResponse(speech='We’re happy to accommodate a wide range of sports equipment on our flights.',
-                displayText='We’re happy to accommodate a wide range of sports equipment on our flights.')  
-                
+                    fs.readFile( './sportsallitems.txt', function(err, data) {
+                        console.log(data);
+                        var json = formatApiaiResponse(speech = data,displayText = data) 
+                     });                                
              response.json(json);
              break;   
         }
