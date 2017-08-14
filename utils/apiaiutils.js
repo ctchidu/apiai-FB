@@ -100,6 +100,48 @@ var fulfillmentRequest = function(request, response) {
                         var json = formatApiaiResponse(speech = str,displayText = str)
                 }
                        }
+                
+                
+                if(travelclass =='premium economy') {
+                   if(locationcountry == 'canada'){
+                        var str = fs.readFileSync('./premiumcanada.txt', 'utf8');
+                        var json = formatApiaiResponse(speech = str,displayText = str)
+                }
+                 if(locationcountry == 'US'){
+                        var str = fs.readFileSync('./premiumus.txt', 'utf8');
+                        var json = formatApiaiResponse(speech = str,displayText = str)
+                }
+                 if(locationcountry == 'SUN'){
+                        var str = fs.readFileSync('./premiumsun.txt', 'utf8');
+                        var json = formatApiaiResponse(speech = str,displayText = str)
+                }
+                 if(locationcountry == 'international'){
+                        var str = fs.readFileSync('./premiuminternational.txt', 'utf8');
+                        var json = formatApiaiResponse(speech = str,displayText = str)
+                }
+                       }
+                
+                
+                if(travelclass =='business') {
+                   if(locationcountry == 'canada'){
+                        var str = fs.readFileSync('./businesscanada.txt', 'utf8');
+                        var json = formatApiaiResponse(speech = str,displayText = str)
+                }
+                 if(locationcountry == 'US'){
+                        var str = fs.readFileSync('./businessus.txt', 'utf8');
+                        var json = formatApiaiResponse(speech = str,displayText = str)
+                }
+                 if(locationcountry == 'SUN'){
+                        var str = fs.readFileSync('./businesssun.txt', 'utf8');
+                        var json = formatApiaiResponse(speech = str,displayText = str)
+                }
+                 if(locationcountry == 'international'){
+                        var str = fs.readFileSync('./businessinternational.txt', 'utf8');
+                        var json = formatApiaiResponse(speech = str,displayText = str)
+                }
+                       }
+                
+                
                
              response.json(json);
              break;   
