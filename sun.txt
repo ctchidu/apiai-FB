@@ -1,0 +1,11 @@
+Economy class fare for travelling Between Canada and Mexico or the Caribbean
+Tango fares:
+        1st bag: $25.00 - $29.50
+        2nd bag: $35.00 - $41.30
+
+Flex fares:
+       1st bag: free
+       2nd bag: $35.00 - $41.30
+
+Latitude fares:
+       2 bags free
