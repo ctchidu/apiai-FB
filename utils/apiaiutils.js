@@ -43,6 +43,21 @@ var fulfillmentRequest = function(request, response) {
                 
              case 'sportsall':
                 var specialitems = body.result.parameters.specialitems;
+                var carryonitems = body.result.parameters.carryonitems;                
+                var carryonarray = ["carry on bag","backpack","briefcase","laptop","cat","small dog","duty free purchases","racquet","musical instrument","camera bag","Garment bag"];
+        
+                if(specialitems == 'carryon'){
+                       if(carryonarray.indexOf(carryonitems) > -1){
+                            var json = formatApiaiResponse(speech='Yes, you can carry ' + carryonitems +'.'+' It is  accepted as carry-on baggage.\nFor more queries related to ' + vvalue +' in carry-on baggage, Kindly refer the below link.\nhttps://www.aircanada.com/ca/en/aco/home/plan/baggage/carry-on.html', 
+                            displayText='Yes, you can carry ' + vvalue +'.'+' It is  accepted as carry-on baggage.\nFor more queries related to ' + carryonitems +' in carry-on baggage, Kindly refer the below link.\nhttps://www.aircanada.com/ca/en/aco/home/plan/baggage/carry-on.html')               
+                       }
+                       else{
+                        var str = fs.readFileSync('./carryon.txt', 'utf8');
+                        var json = formatApiaiResponse(speech = str,displayText = str)
+                           }                        
+                    }
+                
+                
                 if(specialitems == 'sports'){
                         var str = fs.readFileSync('./sportsallitems.txt', 'utf8');
                         var json = formatApiaiResponse(speech = str,displayText = str)
@@ -55,10 +70,7 @@ var fulfillmentRequest = function(request, response) {
                         var str = fs.readFileSync('./hunting.txt', 'utf8');
                         var json = formatApiaiResponse(speech = str,displayText = str)
                     }
-                if(specialitems == 'carryon'){
-                        var str = fs.readFileSync('./carryon.txt', 'utf8');
-                        var json = formatApiaiResponse(speech = str,displayText = str)
-                    }
+
                 if(specialitems == 'restricted'){
                         var str = fs.readFileSync('./restricted.txt', 'utf8');
                         var json = formatApiaiResponse(speech = str,displayText = str)
