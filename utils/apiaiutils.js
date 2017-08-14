@@ -86,21 +86,7 @@ var fulfillmentRequest = function(request, response) {
                         var str = fs.readFileSync('./canada.txt', 'utf8');
                         var json = formatApiaiResponse(speech = str,displayText = str)
                 }
-                 if((travelclass =='economy') && (locationcountry == 'US')){
-                        var str = fs.readFileSync('./us.txt', 'utf8');
-                        var json = formatApiaiResponse(speech = str,displayText = str)
-                }
-                if((travelclass =='economy') && (locationcountry == 'SUN')){
-                        var str = fs.readFileSync('./sun.txt', 'utf8');
-                        var json = formatApiaiResponse(speech = str,displayText = str)
-                }
-                if((travelclass =='economy') && )locationcountry == 'international')){
-                        var str = fs.readFileSync('./international.txt', 'utf8');
-                        var json = formatApiaiResponse(speech = str,displayText = str)
-                }
-            
-            
-                
+               
              response.json(json);
              break;   
                 
