@@ -31,9 +31,11 @@ var fulfillmentRequest = function(request, response) {
         switch(body.result.action) {
             case 'sports.items':
                 if (acceptedarray.indexOf(vvalue) > -1) {
-                     var json = formatApiaiResponse(speech='Yes, you can carry. It is  accepted as checked baggage.', displayText='Yes, you can carry. It is  accepted as checked baggage.')
+                     var json = formatApiaiResponse(speech='Yes, you can carry ' + vvalue +'.'+' It is  accepted as checked baggage.\n For more queries related to accepted items in checked baggage, Kindly refer the below link.\n https://www.aircanada.com/ca/en/aco/home/plan/baggage/special-items.html', 
+                     displayText='Yes, you can carry ' + vvalue +'.'+' It is  accepted as checked baggage.\n For more queries related to accepted items in checked baggage, Kindly refer the below link.\n https://www.aircanada.com/ca/en/aco/home/plan/baggage/special-items.html')
                   } else if(rejectedarray.indexOf(vvalue) > -1){
-                         var json = formatApiaiResponse(speech='No, not accepted as checked baggage because of their overall dimensions.', displayText='No, not accepted as checked baggage because of their overall dimensions.')
+                         var json = formatApiaiResponse(speech='No,' + vvalue +' is not accepted as checked baggage because of their overall dimensions.\n For more queries related to items which are not accepted in checked baggage, Kindly refer the below link. \n https://www.aircanada.com/ca/en/aco/home/plan/baggage/special-items.html',
+                     displayText='No,' + vvalue +' is not accepted as checked baggage because of their overall dimensions.\n For more queries related to items which are not accepted in checked baggage, Kindly refer the below link. \n https://www.aircanada.com/ca/en/aco/home/plan/baggage/special-items.html')
                         }else{
                           var json = formatApiaiResponse(speech='Sorry not able to answer you.', displayText='Sorry not able to answer you.')  
                         }
