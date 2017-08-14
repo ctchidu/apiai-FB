@@ -82,20 +82,20 @@ var fulfillmentRequest = function(request, response) {
              
                 var travelclass = body.result.parameters.travelclass;
                 var locationcountry = body.result.parameters.locationcountry;
-                if((travelclass =='economy') {
-                   if(locationcountry == 'canada')){
+                if(travelclass =='economy') {
+                   if(locationcountry == 'canada'){
                         var str = fs.readFileSync('./canada.txt', 'utf8');
                         var json = formatApiaiResponse(speech = str,displayText = str)
                 }
-                 if(locationcountry == 'US')){
+                 if(locationcountry == 'US'){
                         var str = fs.readFileSync('./us.txt', 'utf8');
                         var json = formatApiaiResponse(speech = str,displayText = str)
                 }
-                 if(locationcountry == 'SUN')){
+                 if(locationcountry == 'SUN'){
                         var str = fs.readFileSync('./sun.txt', 'utf8');
                         var json = formatApiaiResponse(speech = str,displayText = str)
                 }
-                 if(locationcountry == 'international')){
+                 if(locationcountry == 'international'){
                         var str = fs.readFileSync('./international.txt', 'utf8');
                         var json = formatApiaiResponse(speech = str,displayText = str)
                 }
