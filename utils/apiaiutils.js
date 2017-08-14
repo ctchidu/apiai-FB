@@ -44,7 +44,7 @@ var fulfillmentRequest = function(request, response) {
              case 'sportsall':
                 var specialitems = body.result.parameters.specialitems;
                 var carryonitems = body.result.parameters.carryonitems;                
-                var carryonarray = ["carry on bag","backpack","briefcase","laptop","cat","small dog","duty free purchases","racquet","musical instrument","camera bag","Garment bag"];
+                var carryonarray = ["carry on bag","backpack","briefcase","laptop","cat","small dog","duty free purchases","racquet","musical instrument","camera bag","Garment bag","consular bag","diplomatic"];
         
                 if(specialitems == 'carryon'){
                        if(carryonarray.indexOf(carryonitems) > -1){
