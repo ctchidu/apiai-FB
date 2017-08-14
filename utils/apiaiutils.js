@@ -48,8 +48,8 @@ var fulfillmentRequest = function(request, response) {
         
                 if(specialitems == 'carryon'){
                        if(carryonarray.indexOf(carryonitems) > -1){
-                            var json = formatApiaiResponse(speech='Yes, you can carry ' + carryonitems +'.'+' It is  accepted as carry-on baggage.\nFor more queries related to ' + vvalue +' in carry-on baggage, Kindly refer the below link.\nhttps://www.aircanada.com/ca/en/aco/home/plan/baggage/carry-on.html', 
-                            displayText='Yes, you can carry ' + vvalue +'.'+' It is  accepted as carry-on baggage.\nFor more queries related to ' + carryonitems +' in carry-on baggage, Kindly refer the below link.\nhttps://www.aircanada.com/ca/en/aco/home/plan/baggage/carry-on.html')               
+                            var json = formatApiaiResponse(speech='Yes, you can carry ' + carryonitems +'.'+' It is  accepted as carry-on baggage.\nFor more queries related to ' + carryonitems +' in carry-on baggage, Kindly refer the below link.\nhttps://www.aircanada.com/ca/en/aco/home/plan/baggage/carry-on.html', 
+                            displayText='Yes, you can carry ' + carryonitems +'.'+' It is  accepted as carry-on baggage.\nFor more queries related to ' + carryonitems +' in carry-on baggage, Kindly refer the below link.\nhttps://www.aircanada.com/ca/en/aco/home/plan/baggage/carry-on.html')               
                        }
                        else{
                         var str = fs.readFileSync('./carryon.txt', 'utf8');
