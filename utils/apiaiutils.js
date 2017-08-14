@@ -57,6 +57,10 @@ var fulfillmentRequest = function(request, response) {
                         var str = fs.readFileSync('./carryon.txt', 'utf8');
                         var json = formatApiaiResponse(speech = str,displayText = str)
                     }
+                if(specialitems == 'restricted'){
+                        var str = fs.readFileSync('./restricted.txt', 'utf8');
+                        var json = formatApiaiResponse(speech = str,displayText = str)
+                    }
                 response.json(json);
                 break;   
         }
