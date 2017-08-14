@@ -82,61 +82,11 @@ var fulfillmentRequest = function(request, response) {
              
                 var travelclass = body.result.parameters.travelclass;
                 var locationcountry = body.result.parameters.locationcountry;
-                if(travelclass =='economy' and locationcountry == 'canada'){
+                if((travelclass =='economy') && (locationcountry == 'canada')){
                         var str = fs.readFileSync('./canada.txt', 'utf8');
                         var json = formatApiaiResponse(speech = str,displayText = str)
                 }
-                if(travelclass =='economy' and locationcountry == 'US'){
-                        var str = fs.readFileSync('./us.txt', 'utf8');
-                        var json = formatApiaiResponse(speech = str,displayText = str)
-                }
-                if(travelclass =='economy' and locationcountry == 'SUN'){
-                        var str = fs.readFileSync('./sun.txt', 'utf8');
-                        var json = formatApiaiResponse(speech = str,displayText = str)
-                }
-                if(travelclass =='economy' and locationcountry == 'international'){
-                        var str = fs.readFileSync('./international.txt', 'utf8');
-                        var json = formatApiaiResponse(speech = str,displayText = str)
-                }
-                
-                
-                if(travelclass =='premium economy' and locationcountry == 'canada'){
-                        var str = fs.readFileSync('./premiumeconomycanada.txt', 'utf8');
-                        var json = formatApiaiResponse(speech = str,displayText = str)
-                }
-                if(travelclass =='premium economy' and locationcountry == 'US'){
-                        var str = fs.readFileSync('./premiumeconomyus.txt', 'utf8');
-                        var json = formatApiaiResponse(speech = str,displayText = str)
-                }
-                if(travelclass =='premium economy' and locationcountry == 'SUN'){
-                        var str = fs.readFileSync('./premiumeconomysun.txt', 'utf8');
-                        var json = formatApiaiResponse(speech = str,displayText = str)
-                }
-                if(travelclass =='premium economy' and locationcountry == 'international'){
-                        var str = fs.readFileSync('./premiumeconomyinternational.txt', 'utf8');
-                        var json = formatApiaiResponse(speech = str,displayText = str)
-                }
-                
-                
-                if(travelclass =='business' and locationcountry == 'canada'){
-                        var str = fs.readFileSync('./businesscanada.txt', 'utf8');
-                        var json = formatApiaiResponse(speech = str,displayText = str)
-                }
-                if(travelclass =='business' and locationcountry == 'US'){
-                        var str = fs.readFileSync('./businessus.txt', 'utf8');
-                        var json = formatApiaiResponse(speech = str,displayText = str)
-                }
-                if(travelclass =='business' and locationcountry == 'SUN'){
-                        var str = fs.readFileSync('./businesssun.txt', 'utf8');
-                        var json = formatApiaiResponse(speech = str,displayText = str)
-                }
-                if(travelclass =='business' and locationcountry == 'international'){
-                        var str = fs.readFileSync('./businessinternational.txt', 'utf8');
-                        var json = formatApiaiResponse(speech = str,displayText = str)
-                }
-                
-             
-                
+            
              response.json(json);
              break;   
                 
