@@ -91,60 +91,7 @@ var fulfillmentRequest = function(request, response) {
              case 'checkedcarryon':
                 
                 
-  var checkAccepted = ["Archery equipment – bows and arrows","Archery equipment – bows and arrows","Archery equipment",
-                    "bows and arrows","bows","arrows","Avalanche rescue equipment","Avalanche rescue equipment",
-                    "Bicycles","Bicycles","cycle","cycles","Boating/Fishing equipment","Boating/Fishing equipment",
-                    "Boating","Fishing","Fishing equipment","Boating equipment","Boogie boards","Boogie boards","skim",
-                    "speed","skateboards","Skates","Skeleton Sleds","Skis","snowboards","Broomball","Broomball",
-                    "curling equipment","curling equipment","Golf Clubs","Golf Clubs","golf","golf stick",
-                    "Hockey","Hockey","lacrosse","ringette","cricket","cricket equipment"
-                    "Kayaking equipment","Kayaking equipment","Kayaking",
-                    "Parachutes","Parachutes","parachuting","parachuting equipment",
-                    "Racquets","Racquets","badminton","squash","tennis",
-                    "Scuba diving equipment","Scuba diving equipment","Scuba diving","scuba","diving",
-                    "bowling balls","bowling balls","Sports balls","balls","ball",
-                    "Surfboards","paddleboards","kiteboards","wakeboards","wave skis","Carry-on bag","Carry-on bag","carry on bag","roller bag","backpack","briefcase",
-                    "laptop","laptop",
-                    "Cat","Cat","small dog","pets",
-                    "duty-free purchases","duty-free purchases","duty free",
-                    "Sport racquet","Sport racquet","tennis","squash","badminton","musical instrument",
-                    "Camera bag","Camera bag","diplomatic","consular bag","Garment bag",
-                    "guitars","guitars","violins","violas"];
-                
-   var checkRejected = ["Bobsleighs","Bobsleighs",
-                        "Canoes","Canoes",
-                        "Hang gliders","Hang gliders","gliders",
-                        "Luges","Luges",
-                        "Vaulting poles","Vaulting poles","vaulting",
-                        "Windsurfing equipment","Windsurfing equipment","Windsurfing"];
-                
-    var carryAccepted = ["Carry-on bag","Carry-on bag","carry on bag","roller bag","backpack","briefcase",
-                        "laptop","laptop",
-                        "Cat","Cat","small dog","pets",
-                        "duty-free purchases","duty-free purchases","duty free",
-                        "Sport racquet","Sport racquet","tennis","squash","badminton","musical instrument",
-                        "Camera bag","Camera bag","diplomatic","consular bag","Garment bag",
-                        "guitars","guitars","violins","violas"];
-    
-      var restricted = ["Batteries","Batteries",
-                        "Battery-powered","Battery-powered","battery powered",
-                        "Camping Equipment","Camping Equipment",
-                        "Curling Irons","Curling Irons","Lighters",
-                        "Dry ice","Dry ice","Brine","Gel","ice Packs","Liquids",
-                        "aerosols","aerosols","toiletries","alcoholic beverages","alcohol",
-                        "Meals","Meals","Ready-to-eat","ready to eat",
-                        "Oxygen","Oxygen",
-                        "Air Purifiers","Air Purifiers","Ionizers",
-                        "Avalanche Rescue Backpacks","Avalanche Rescue Backpacks",
-                        "Compressed Gas","Compressed Gas","Cylinders",
-                        "Corrosive","Corrosive","Oxidizing Materials","oxidize",
-                        "Defence","Defence","Incapacitating","Explosives",
-                        "Firearms","Firearms","Ammunition",
-                        "Fuel-powered Equipment","Fuel-powered Equipment","Fuel powered",
-                        "Paint","Paint","Poisons","Toxins",
-                        "Radioactive Materials","Radioactive Materials",
-                        "Security Attaché Cases","Security Attaché Cases"];
-                
+        
               
                 var typeofbaggage = body.result.parameters.typeofbaggage;
                 var splItems = body.result.parameters.splItems;
