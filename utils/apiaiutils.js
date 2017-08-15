@@ -162,8 +162,8 @@ var fulfillmentRequest = function(request, response) {
                      displayText='No,It is not accepted as checked baggage because of their overall dimensions.\nFor more queries related to checked baggage, Kindly refer the below link. \nhttps://www.aircanada.com/ca/en/aco/home/plan/baggage/special-items.html')
                          
                         }else if(restricted.indexOf(splItems) > -1){
-                        var json = formatApiaiResponse(speech='No,It is Restricted / Prohibited in either carry-on or checked baggage..\nFor more queries related to checked baggage, Kindly refer the below link. \nhttps://www.aircanada.com/ca/en/aco/home/plan/baggage/restricted-and-prohibited-items.html',
-                     displayText='No,It is Restricted / Prohibited in either carry-on or checked baggage...\nFor more queries related to checked baggage, Kindly refer the below link. \nhttps://www.aircanada.com/ca/en/aco/home/plan/baggage/restricted-and-prohibited-items.html')
+                        var json = formatApiaiResponse(speech='No,It is Restricted / Prohibited in either carry-on or checked baggage..\nFor more queries related to Restricted / Prohibited items, Kindly refer the below link. \nhttps://www.aircanada.com/ca/en/aco/home/plan/baggage/restricted-and-prohibited-items.html',
+                     displayText='No,It is Restricted / Prohibited in either carry-on or checked baggage...\nFor more queries related to Restricted / Prohibited items, Kindly refer the below link. \nhttps://www.aircanada.com/ca/en/aco/home/plan/baggage/restricted-and-prohibited-items.html')
                         
                         }else{
                             var json = formatApiaiResponse(speech='Sorry not able to answer you at the moment',displayText='Sorry not able to answer you at the moment')
@@ -179,8 +179,8 @@ var fulfillmentRequest = function(request, response) {
                   
                     }
                     else if(restricted.indexOf(splItems) > -1){
-                        var json = formatApiaiResponse(speech='No,It is Restricted / Prohibited in either carry-on or checked baggage..\nFor more queries related to carry-on baggage, Kindly refer the below link. \nhttps://www.aircanada.com/ca/en/aco/home/plan/baggage/restricted-and-prohibited-items.html',
-                     displayText='No,It is Restricted / Prohibited in either carry-on or checked baggage...\nFor more queries related to carry-on baggage, Kindly refer the below link. \nhttps://www.aircanada.com/ca/en/aco/home/plan/baggage/restricted-and-prohibited-items.html')
+                        var json = formatApiaiResponse(speech='No,It is Restricted / Prohibited in either carry-on or checked baggage..\nFor more queries related to Restricted / Prohibited items, Kindly refer the below link. \nhttps://www.aircanada.com/ca/en/aco/home/plan/baggage/restricted-and-prohibited-items.html',
+                     displayText='No,It is Restricted / Prohibited in either carry-on or checked baggage...\nFor more queries related to Restricted / Prohibited items, Kindly refer the below link. \nhttps://www.aircanada.com/ca/en/aco/home/plan/baggage/restricted-and-prohibited-items.html')
                         
                         }
                     else{
