@@ -105,7 +105,24 @@ var fulfillmentRequest = function(request, response) {
                         "Camera bag","Camera bag","diplomatic","consular bag","Garment bag",
                         "guitars","guitars","violins","violas"];
 
-        
+            var restricted = ["Batteries","Batteries",
+                        "Battery-powered","Battery-powered","battery powered",
+                        "Camping Equipment","Camping Equipment",
+                        "Curling Irons","Curling Irons","Lighters",
+                        "Dry ice","Dry ice","Brine","Gel","ice Packs","Liquids",
+                        "aerosols","aerosols","toiletries","alcoholic beverages","alcohol",
+                        "Meals","Meals","Ready-to-eat","ready to eat",
+                        "Oxygen","Oxygen",
+                        "Air Purifiers","Air Purifiers","Ionizers",
+                        "Avalanche Rescue Backpacks","Avalanche Rescue Backpacks",
+                        "Compressed Gas","Compressed Gas","Cylinders",
+                        "Corrosive","Corrosive","Oxidizing Materials","oxidize",
+                        "Defence","Defence","Incapacitating","Explosives",
+                        "Firearms","Firearms","Ammunition",
+                        "Fuel-powered Equipment","Fuel-powered Equipment","Fuel powered",
+                        "Paint","Paint","Poisons","Toxins",
+                        "Radioactive Materials","Radioactive Materials",
+                        "Security Attaché Cases","Security Attaché Cases"];  
               
                 var typeofbaggage = body.result.parameters.typeofbaggage;
                 var splItems = body.result.parameters.splItems;
