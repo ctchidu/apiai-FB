@@ -90,7 +90,21 @@ var fulfillmentRequest = function(request, response) {
                 
              case 'checkedcarryon':
                 
+                 var checkRejected = ["Bobsleighs","Bobsleighs",
+                        "Canoes","Canoes",
+                        "Hang gliders","Hang gliders","gliders",
+                        "Luges","Luges",
+                        "Vaulting poles","Vaulting poles","vaulting",
+                        "Windsurfing equipment","Windsurfing equipment","Windsurfing"];
                 
+    var carryAccepted = ["Carry-on bag","Carry-on bag","carry on bag","roller bag","backpack","briefcase",
+                        "laptop","laptop",
+                        "Cat","Cat","small dog","pets",
+                        "duty-free purchases","duty-free purchases","duty free",
+                        "Sport racquet","Sport racquet","tennis","squash","badminton","musical instrument",
+                        "Camera bag","Camera bag","diplomatic","consular bag","Garment bag",
+                        "guitars","guitars","violins","violas"];
+
         
               
                 var typeofbaggage = body.result.parameters.typeofbaggage;
