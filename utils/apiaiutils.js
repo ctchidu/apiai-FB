@@ -173,7 +173,7 @@ var fulfillmentRequest = function(request, response) {
                 }   
                 else if(typeofbaggage == 'carry on baggage'){
                     
-                    if(checkAccepted.indexOf(splItems) > -1){
+                    if(carryAccepted.indexOf(splItems) > -1){
                        var json = formatApiaiResponse(speech='Yes, you can carry it is  accepted as carry on baggage.\nFor more queries related to carry on baggage, Kindly refer the below link.\nhttps://www.aircanada.com/ca/en/aco/home/plan/baggage/carry-on.html', 
                      displayText='Yes, you can carry it is  accepted as carry on baggage.\nFor more queries related to carry on baggage, Kindly refer the below link.\nhttps://www.aircanada.com/ca/en/aco/home/plan/baggage/carry-on.html')
                   
