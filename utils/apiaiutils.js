@@ -1,4 +1,6 @@
 
+fs = require('fs')
+
 function formatApiaiResponse(speech, displayText) {
     return {
         "speech": speech,
