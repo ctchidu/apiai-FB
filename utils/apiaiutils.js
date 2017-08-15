@@ -103,7 +103,13 @@ var fulfillmentRequest = function(request, response) {
                     "Racquets","Racquets","badminton","squash","tennis",
                     "Scuba diving equipment","Scuba diving equipment","Scuba diving","scuba","diving",
                     "bowling balls","bowling balls","Sports balls","balls","ball",
-                    "Surfboards","paddleboards","kiteboards","wakeboards","wave skis"];
+                    "Surfboards","paddleboards","kiteboards","wakeboards","wave skis","Carry-on bag","Carry-on bag","carry on bag","roller bag","backpack","briefcase",
+                    "laptop","laptop",
+                    "Cat","Cat","small dog","pets",
+                    "duty-free purchases","duty-free purchases","duty free",
+                    "Sport racquet","Sport racquet","tennis","squash","badminton","musical instrument",
+                    "Camera bag","Camera bag","diplomatic","consular bag","Garment bag",
+                    "guitars","guitars","violins","violas"];
                 
    var checkRejected = ["Bobsleighs","Bobsleighs",
                         "Canoes","Canoes",
@@ -139,20 +145,49 @@ var fulfillmentRequest = function(request, response) {
                         "Radioactive Materials","Radioactive Materials",
                         "Security Attaché Cases","Security Attaché Cases"];
                 
-                
-                
-                
-                
-                
+              
                 var typeofbaggage = body.result.parameters.typeofbaggage;
                 var splItems = body.result.parameters.splItems;
                 
                 if(typeofbaggage == 'checked baggage')
                 {
-                if(){
-                   }
+                    if(checkAccepted.indexOf(splItems) > -1){
+                     var json = formatApiaiResponse(speech='Yes, you can carry ' + splItems +'.'+' It is  accepted as checked baggage.\nFor more queries related to ' + splItems +' in checked baggage, Kindly refer the below link.\nhttps://www.aircanada.com/ca/en/aco/home/plan/baggage/special-items.html', 
+                     displayText='Yes, you can carry ' + splItems +'.'+' It is  accepted as checked baggage.\nFor more queries related to ' + splItems +' in checked baggage, Kindly refer the below link.\n https://www.aircanada.com/ca/en/aco/home/plan/baggage/special-items.html')
+                  
+                    }
+                    else if(checkRejected.indexOf(splItems) > -1){
+                     var json = formatApiaiResponse(speech='No,' + splItems +' is not accepted as checked baggage because of their overall dimensions.\nFor more queries related to ' + splItems +' in checked baggage, Kindly refer the below link. \nhttps://www.aircanada.com/ca/en/aco/home/plan/baggage/special-items.html',
+                     displayText='No,' + splItems +' is not accepted as checked baggage because of their overall dimensions.\nFor more queries related to ' + splItems +' in checked baggage, Kindly refer the below link. \nhttps://www.aircanada.com/ca/en/aco/home/plan/baggage/special-items.html')
+                         
+                        }else if(restricted.indexOf(splItems) > -1){
+                        var json = formatApiaiResponse(speech='No,' + splItems +' is Restricted / Prohibited in either carry-on or checked baggage..\nFor more queries related to ' + splItems +' in checked baggage, Kindly refer the below link. \nhttps://www.aircanada.com/ca/en/aco/home/plan/baggage/restricted-and-prohibited-items.html',
+                     displayText='No,' + splItems +' is Restricted / Prohibited in either carry-on or checked baggage...\nFor more queries related to ' + splItems +' in checked baggage, Kindly refer the below link. \nhttps://www.aircanada.com/ca/en/aco/home/plan/baggage/restricted-and-prohibited-items.html')
+                        
+                        }else{
+                            var json = formatApiaiResponse(speech='Sorry not able to answer you at the moment',displayText='Sorry not able to answer you at the moment')
+                        }
+    
+                
                 }   
                 else if(typeofbaggage == 'carry on baggage'){
+                    
+                    if(checkAccepted.indexOf(splItems) > -1){
+                       var json = formatApiaiResponse(speech='Yes, you can carry ' + splItems +'.'+' It is  accepted as carry on baggage.\nFor more queries related to ' + splItems +' in carry on baggage, Kindly refer the below link.\nhttps://www.aircanada.com/ca/en/aco/home/plan/baggage/carry-on.html', 
+                     displayText='Yes, you can carry ' + splItems +'.'+' It is  accepted as carry on baggage.\nFor more queries related to ' + splItems +' in carry on baggage, Kindly refer the below link.\nhttps://www.aircanada.com/ca/en/aco/home/plan/baggage/carry-on.html')
+                  
+                    }
+                    else if(restricted.indexOf(splItems) > -1){
+                        var json = formatApiaiResponse(speech='No,' + splItems +' is Restricted / Prohibited in either carry-on or checked baggage..\nFor more queries related to ' + splItems +' in carry-on baggage, Kindly refer the below link. \nhttps://www.aircanada.com/ca/en/aco/home/plan/baggage/restricted-and-prohibited-items.html',
+                     displayText='No,' + splItems +' is Restricted / Prohibited in either carry-on or checked baggage...\nFor more queries related to ' + splItems +' in carry-on baggage, Kindly refer the below link. \nhttps://www.aircanada.com/ca/en/aco/home/plan/baggage/restricted-and-prohibited-items.html')
+                        
+                        }
+                    else{
+                           var json = formatApiaiResponse(speech='No,' + splItems +' is not accepted as carry on baggage because of their overall dimensions.\nFor more queries related to ' + splItems +' in carry on baggage, Kindly refer the below link. \nhttps://www.aircanada.com/ca/en/aco/home/plan/baggage/carry-on.html',
+                     displayText='No,' + splItems +' is not accepted as carry on baggage because of their overall dimensions.\nFor more queries related to ' + splItems +' in carry on baggage, Kindly refer the below link. \nhttps://www.aircanada.com/ca/en/aco/home/plan/baggage/carry-on.html')
+                    
+                        }
+                    
                 }
                 
                 
