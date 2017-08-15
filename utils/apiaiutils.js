@@ -108,7 +108,7 @@ var fulfillmentRequest = function(request, response) {
                     "duty-free purchases","duty-free purchases","duty free",
                     "Sport racquet","Sport racquet","tennis","squash","badminton","musical instrument",
                     "Camera bag","Camera bag","diplomatic","consular bag","Garment bag",
-                    "guitars","guitars","violins","violas"];
+                    "guitars","guitars","violins","violas","golf club"];
                 
                 
                 
