@@ -224,9 +224,12 @@ var fulfillmentRequest = function(request, response) {
                 break;   
                 
                 
-                
-                
-                
+             case 'payment':   
+	      var str = fs.readFileSync('./payment.txt', 'utf8');
+	      var json = formatApiaiResponse(speech = str,displayText = str)  
+             response.json(json);
+             break;
+			
         }
     }
 }
