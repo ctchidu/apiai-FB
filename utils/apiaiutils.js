@@ -191,13 +191,32 @@ var fulfillmentRequest = function(request, response) {
                     
                 }
                 
-                
-                
-                
+               
              response.json(json);
              break;   
                 
-                
+         case 'all.items':
+
+				var allitems = body.result.parameters.allitems; 
+				if(allitems == 'sports'){
+                        var str = fs.readFileSync('./sportsallitems.txt', 'utf8');
+                        var json = formatApiaiResponse(speech = str,displayText = str)
+                    }
+                if(allitems == 'music'){
+                        var str = fs.readFileSync('./music.txt', 'utf8');
+                        var json = formatApiaiResponse(speech = str,displayText = str)
+                    }
+                if(allitems == 'hunting'){
+                        var str = fs.readFileSync('./hunting.txt', 'utf8');
+                        var json = formatApiaiResponse(speech = str,displayText = str)
+                    }
+
+                if(allitems == 'restricted'){
+                        var str = fs.readFileSync('./restricted.txt', 'utf8');
+                        var json = formatApiaiResponse(speech = str,displayText = str)
+                    }
+                response.json(json);
+                break;   
                 
                 
                 
