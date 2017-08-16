@@ -197,8 +197,9 @@ var fulfillmentRequest = function(request, response) {
                 
          case 'all.items':
 
-				var allitems = body.result.parameters.allitems; 
-				if(allitems == 'sports'){
+		var allitems = body.result.parameters.allitems;
+		var typeofbaggage = body.result.parameters.typeofbaggage;	
+		if(allitems == 'sports'){
                         var str = fs.readFileSync('./sportsallitems.txt', 'utf8');
                         var json = formatApiaiResponse(speech = str,displayText = str)
                     }
@@ -215,6 +216,10 @@ var fulfillmentRequest = function(request, response) {
                         var str = fs.readFileSync('./restricted.txt', 'utf8');
                         var json = formatApiaiResponse(speech = str,displayText = str)
                     }
+		if(typeofbaggage == 'carry on baggage'){
+                        var str = fs.readFileSync('./carryon.txt', 'utf8');
+                        var json = formatApiaiResponse(speech = str,displayText = str)
+                    }	
                 response.json(json);
                 break;   
                 
