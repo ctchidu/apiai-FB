@@ -1,5 +1,6 @@
 
 fs = require('fs')
+var parseXlsx = require('excel')
 
 function formatApiaiResponse(speech, displayText) {
     return {
@@ -252,6 +253,34 @@ var fulfillmentRequest = function(request, response) {
 	      var json = formatApiaiResponse(speech = str,displayText = str)  
              response.json(json);
              break;
+			
+			
+	     case 'exceldata':
+			
+		var splItems = body.result.parameters.splItems;	
+		
+			parseXlsx('exceldata.xlsx', function(err, data) {
+ 
+			var jsonData = JSON.parse(JSON.stringify(convertToJSON(data)));
+			for(i = 0; i < jsonData.length; i++){
+     
+			 if(jsonData[i].NAME == splItems){
+				 var str = jsonData[i].DESCRIPTION;
+				 console.log(str);
+				 console.log(jsonData[i].DESCRIPTION);
+				 var str ='hello';
+				 var json = formatApiaiResponse(speech = str,displayText = str)
+				 console.log(json);
+				 
+				 }	 
+			  }
+
+		});
+			
+		
+		  	
+	        response.json(json);
+             	break;			
 			
         }
     }
