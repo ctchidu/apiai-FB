@@ -53,6 +53,7 @@ var fulfillmentRequest = function(request, response) {
                    if(locationcountry == 'canada'){
                         var str = fs.readFileSync('./canada.txt', 'utf8');
                         var json = formatApiaiResponse(speech = str,displayText = str)
+			console.log(json);
                 }
                  if(locationcountry == 'US'){
                         var str = fs.readFileSync('./us.txt', 'utf8');
