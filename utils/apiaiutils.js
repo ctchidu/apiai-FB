@@ -10,6 +10,29 @@ function formatApiaiResponse(speech, displayText) {
     }
 }
 
+function convertToJSON(array) {
+  var first = array[0].join()
+  var headers = first.split(',');
+
+  var jsonData = [];
+  for ( var i = 1, length = array.length; i < length; i++ )
+  {
+
+    var myRow = array[i].join();
+    var row = myRow.split(',');
+
+    var data = {};
+    for ( var x = 0; x < row.length; x++ )
+    {
+      data[headers[x]] = row[x];
+    }
+    jsonData.push(data);
+
+  }
+  return jsonData;
+};
+
+
 
 var fulfillmentRequest = function(request, response) {
     var body = request.body;
@@ -231,6 +254,25 @@ var fulfillmentRequest = function(request, response) {
              response.json(json);
              break;
 			
+		case 'exceldata'
+		var splItems = body.result.parameters.splItems;	
+		
+		parseXlsx('./exceldata.xlsx', function(err, data) {
+ 
+			var jsonData = JSON.parse(JSON.stringify(convertToJSON(data)));
+			for(i = 0; i < jsonData.length; i++){
+     
+			 if(jsonData[i].NAME == splItems){
+				 var str = jsonData[i].DESCRIPTION);
+				 }	 
+			  }
+
+		});	
+			
+		
+		var json = formatApiaiResponse(speech = str,displayText = str)  	
+	        response.json(json);
+             	break;	
         }
     }
 }
