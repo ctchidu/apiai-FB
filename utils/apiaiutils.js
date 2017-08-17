@@ -271,7 +271,8 @@ var fulfillmentRequest = function(request, response) {
 				 var str ='hello';
 				 var json = formatApiaiResponse(speech = str,displayText = str)
 				 console.log(json);
-				 
+				 response.json(json);
+             			break;
 				 }	 
 			  }
 
@@ -279,8 +280,7 @@ var fulfillmentRequest = function(request, response) {
 			
 		
 		  	
-	        response.json(json);
-             	break;			
+	        			
 			
         }
     }
