@@ -256,16 +256,17 @@ var fulfillmentRequest = function(request, response) {
 			
 		case 'exceldata':
 			
-		var splItems = body.result.parameters.splItems;
-		var str = '';	
+		var splItems = body.result.parameters.splItems;	
 		
 			parseXlsx('exceldata.xlsx', function(err, data) {
+				console.log(data);
  
 			var jsonData = JSON.parse(JSON.stringify(convertToJSON(data)));
 			for(i = 0; i < jsonData.length; i++){
      
 			 if(jsonData[i].NAME == splItems){
 				 var str = jsonData[i].DESCRIPTION;
+				 console.log(str);
 				 }	 
 			  }
 
