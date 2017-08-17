@@ -259,21 +259,20 @@ var fulfillmentRequest = function(request, response) {
 		var splItems = body.result.parameters.splItems;	
 		
 			parseXlsx('exceldata.xlsx', function(err, data) {
-				console.log(data);
  
 			var jsonData = JSON.parse(JSON.stringify(convertToJSON(data)));
 			for(i = 0; i < jsonData.length; i++){
      
 			 if(jsonData[i].NAME == splItems){
-				 var str = jsonData[i].DESCRIPTION;
-				 console.log(str);
+				 var json = formatApiaiResponse(speech = jsonData[i].DESCRIPTION,displayText = jsonData[i].DESCRIPTION)
+				 
 				 }	 
 			  }
 
 		});
 			
 		
-		var json = formatApiaiResponse(speech = str,displayText = str)  	
+		  	
 	        response.json(json);
              	break;	
         }
