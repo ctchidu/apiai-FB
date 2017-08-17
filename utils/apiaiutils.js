@@ -254,7 +254,8 @@ var fulfillmentRequest = function(request, response) {
              response.json(json);
              break;
 			
-		case 'exceldata'
+		case 'exceldata':
+			
 		var splItems = body.result.parameters.splItems;	
 		
 		parseXlsx('./exceldata.xlsx', function(err, data) {
