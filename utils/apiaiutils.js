@@ -259,17 +259,7 @@ var fulfillmentRequest = function(request, response) {
 		var splItems = body.result.parameters.splItems;
 		var str = '';	
 		
-		parseXlsx('./exceldata.xlsx', function(err, data) {
- 
-			var jsonData = JSON.parse(JSON.stringify(convertToJSON(data)));
-			for(i = 0; i < jsonData.length; i++){
-     
-			 if(jsonData[i].NAME == splItems){
-				 var str = jsonData[i].DESCRIPTION);
-				 }	 
-			  }
-
-		});	
+	
 			
 		
 		var json = formatApiaiResponse(speech = str,displayText = str)  	
