@@ -1,5 +1,6 @@
 
 fs = require('fs')
+var parseXlsx = require('excel')
 
 function formatApiaiResponse(speech, displayText) {
     return {
