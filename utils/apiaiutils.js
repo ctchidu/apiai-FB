@@ -268,7 +268,8 @@ var fulfillmentRequest = function(request, response) {
 				 console.log(str);
 				 console.log(jsonData[i].DESCRIPTION);
 				 
-				 var json = formatApiaiResponse(speech = jsonData[i].DESCRIPTION,displayText = jsonData[i].DESCRIPTION)
+				 var json = formatApiaiResponse(speech = str,displayText = str)
+				 console.log(json);
 				 
 				 }	 
 			  }
