@@ -265,14 +265,9 @@ var fulfillmentRequest = function(request, response) {
 			for(i = 0; i < jsonData.length; i++){
      
 			 if(jsonData[i].NAME == splItems){
-				 var str = jsonData[i].DESCRIPTION;
-				 console.log(str);
-				 console.log(jsonData[i].DESCRIPTION);
-				 var str ='hello';
-				 var json = formatApiaiResponse(speech = str,displayText = str)
-				 console.log(json);
+				 var json = formatApiaiResponse(speech = jsonData[i].DESCRIPTION,displayText = jsonData[i].DESCRIPTION)
 				 response.json(json);
-             			break;
+             			 break;
 				 }	 
 			  }
 
