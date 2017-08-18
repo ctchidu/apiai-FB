@@ -57,6 +57,23 @@ function prepareSendBio() {
   sendMessage(messageData);
 };
 
+
+function sendMessage(messageData) {
+  request({
+    url: 'https://graph.facebook.com/v2.6/me/messages',
+    qs: {access_token: PAGE_ACCESS_TOKEN},
+    method: 'POST',
+    json: messageData
+  }, (error, response) => {
+    if (error) {
+        console.log('Error sending message: ', error);
+    } else if (response.body.error) {
+        console.log('Error: ', response.body.error);
+    }
+  });
+}
+
+
 var fulfillmentRequest = function(request, response) {
     var body = request.body;
     if (!body | !body.result.action) {
@@ -247,7 +264,7 @@ var fulfillmentRequest = function(request, response) {
 		var allitems = body.result.parameters.allitems;
 		var typeofbaggage = body.result.parameters.typeofbaggage;	
 		if(allitems == 'sports'){
-                    var json = prepareSendBio();
+                     prepareSendBio();
                     }
                 if(allitems == 'music'){
                         var str = fs.readFileSync('./music.txt', 'utf8');
