@@ -1,6 +1,7 @@
 
 fs = require('fs')
 var parseXlsx = require('excel')
+const request = require('request');
 
 function formatApiaiResponse(speech, displayText) {
     return {
@@ -54,6 +55,7 @@ function prepareSendBio() {
       }
     }
   };
+console.log(messageData);	
   sendMessage(messageData);
 };
 
