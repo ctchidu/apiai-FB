@@ -61,7 +61,7 @@ function prepareSendBio() {
 function sendMessage(messageData) {
   request({
     url: 'https://graph.facebook.com/v2.6/me/messages',
-    qs: {access_token: PAGE_ACCESS_TOKEN},
+    qs: {access_token: 'EAAU92VlQu5gBANE4l4jQ0tKPkObUyAFttybmmnEOapEVA3aiM7TcAWYZCRn1uT4uPhZCJZB4Kg4R8NLoOIIgpdFpWyyBxUVzKXPzZAa2IeuIzCTzRQ6DLZCir7TOElXNZAecJKncWJTp6UVSfEB4ZB8eb4rP3pxzsWIdigX0FbvNAZDZD'},
     method: 'POST',
     json: messageData
   }, (error, response) => {
