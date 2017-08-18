@@ -26,6 +26,7 @@
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
     "request": "^2.81.0",
-    "excel": "^0.1.7"
+    "excel": "^0.1.7",
+    "request": "^2.79.0"
   }
 }
