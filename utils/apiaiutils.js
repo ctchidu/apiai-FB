@@ -32,7 +32,30 @@ function convertToJSON(array) {
   return jsonData;
 };
 
-
+function prepareSendBio() {
+  let messageData = {
+    message: {
+      attachment: {
+        type: 'template',
+        payload: {
+          template_type: 'generic',
+          elements: [{
+            title: 'chidu',
+            subtitle: 'chidu1',
+            item_url: 'https://www.aircanada.com/content/dam/aircanada/portal/images/content-images/plan/baggage/std-article.png',
+            image_url: 'https://www.aircanada.com/content/dam/aircanada/portal/images/content-images/plan/baggage/std-article.png',
+            buttons: [{
+              type: 'web_url',
+              url: 'https://www.aircanada.com/content/dam/aircanada/portal/images/content-images/plan/baggage/std-article.png',
+              title: 'testing'
+            }],
+          }]
+        }
+      }
+    }
+  };
+  sendMessage(messageData);
+};
 
 var fulfillmentRequest = function(request, response) {
     var body = request.body;
@@ -224,8 +247,7 @@ var fulfillmentRequest = function(request, response) {
 		var allitems = body.result.parameters.allitems;
 		var typeofbaggage = body.result.parameters.typeofbaggage;	
 		if(allitems == 'sports'){
-                        var str = fs.readFileSync('./sportsallitems.txt', 'utf8');
-                        var json = formatApiaiResponse(speech = str,displayText = str)
+                    var json = prepareSendBio();
                     }
                 if(allitems == 'music'){
                         var str = fs.readFileSync('./music.txt', 'utf8');
