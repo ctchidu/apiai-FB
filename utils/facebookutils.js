@@ -5,6 +5,36 @@ var apiai = require('apiai')
 var api = apiai(config.apiaitoken);
 
 
+function prepareSendBio(sender) {
+  let messageData = {
+    recipient: {
+      id: sender
+    },
+    message: {
+      attachment: {
+        type: 'template',
+        payload: {
+          template_type: 'generic',
+          elements: [{
+            title: 'Twitter',
+            subtitle: '@girlie_mac',
+            item_url: 'https://www.twitter.com/girlie_mac',
+            image_url: 'https://raw.githubusercontent.com/girliemac/fb-apiai-bot-demo/master/public/images/tomomi-twitter.png',
+            buttons: [{
+              type: 'web_url',
+              url: 'https://www.twitter.com/girlie_mac',
+              title: 'View Twitter Bio'
+            }],
+          }]
+        }
+      }
+    }
+  };
+    console.log('ready buttons');
+  sendMessage(messageData);
+}
+
+
 var handleFacebookTextMessage = function(event) {
     console.log('testing 1');
     var question = event.message.text;
@@ -20,24 +50,13 @@ var handleFacebookTextMessage = function(event) {
     } else {
         console.log('i am last');
         
-        var req_bot = api.textRequest(question, {
-            sessionId: sender_id
-        });
-
-        req_bot.on('response', function(response_bot) {
-            var text = response_bot.result.fulfillment.speech;
-            var action = response_bot.result.action;
-
-            replyMessage(sender_id, response_bot.result.fulfillment);
-        });
-
-        req_bot.on('error', function(error_bot) {
-            console.log("Couldn't answer the question");
-            console.log(error_bot);
-            replyMessage(sender_id, 'Une erreur est survenue. Un opérateur va prendre le relais d\'ici peu.');
-        })
-
-        req_bot.end();
+if(question = 'test'){
+    console.log('prepare buttons');
+prepareSendBio(sender_id);
+}
+        
+        
+        
     }
 }
 
