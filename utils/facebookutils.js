@@ -16,6 +16,7 @@ function prepareSendBio(sender) {
         payload: {
           template_type: 'generic',
           elements: [{
+            title: 'BagBot',
             buttons: [{
               type: 'web_url',
               url: 'https://www.google.com/',
