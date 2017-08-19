@@ -41,6 +41,7 @@ app.post('/facebook', json_body_parser, function(req, response) {
             pageEntry.messaging.forEach(messagingEvent => {
                 if (messagingEvent.message) {
                     if (!messagingEvent.message.is_echo) {
+                        console.log('testing facebook');
                         facebookUtils.handleFacebookTextMessage(messagingEvent);
                     }
                 }
