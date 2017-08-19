@@ -16,14 +16,10 @@ function prepareSendBio(sender) {
         payload: {
           template_type: 'generic',
           elements: [{
-            title: 'Twitter',
-            subtitle: '@girlie_mac',
-            item_url: 'https://www.twitter.com/girlie_mac',
-            image_url: 'https://raw.githubusercontent.com/girliemac/fb-apiai-bot-demo/master/public/images/tomomi-twitter.png',
             buttons: [{
               type: 'web_url',
-              url: 'https://www.twitter.com/girlie_mac',
-              title: 'View Twitter Bio'
+              url: 'https://www.google.com/',
+              title: 'Economy'
             }],
           }]
         }
