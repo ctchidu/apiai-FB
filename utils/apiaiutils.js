@@ -55,25 +55,11 @@ function prepareSendBio() {
       }
     }
   };
-console.log(messageData);	
-  sendMessage(messageData);
+	
+  return messageData;
 };
 
 
-function sendMessage(messageData) {
-  request({
-    url: 'https://graph.facebook.com/v2.6/me/messages',
-    qs: {access_token: 'EAAU92VlQu5gBANE4l4jQ0tKPkObUyAFttybmmnEOapEVA3aiM7TcAWYZCRn1uT4uPhZCJZB4Kg4R8NLoOIIgpdFpWyyBxUVzKXPzZAa2IeuIzCTzRQ6DLZCir7TOElXNZAecJKncWJTp6UVSfEB4ZB8eb4rP3pxzsWIdigX0FbvNAZDZD'},
-    method: 'POST',
-    json: messageData
-  }, (error, response) => {
-    if (error) {
-        console.log('Error sending message: ', error);
-    } else if (response.body.error) {
-        console.log('Error: ', response.body.error);
-    }
-  });
-}
 
 
 var fulfillmentRequest = function(request, response) {
@@ -266,7 +252,7 @@ var fulfillmentRequest = function(request, response) {
 		var allitems = body.result.parameters.allitems;
 		var typeofbaggage = body.result.parameters.typeofbaggage;	
 		if(allitems == 'sports'){
-                     prepareSendBio();
+                    var json = prepareSendBio();
                     }
                 if(allitems == 'music'){
                         var str = fs.readFileSync('./music.txt', 'utf8');
