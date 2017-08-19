@@ -6,13 +6,20 @@ var api = apiai(config.apiaitoken);
 
 
 var handleFacebookTextMessage = function(event) {
+    console.log('testing 1');
     var question = event.message.text;
     var sender_id = event.sender.id;
     var recipient_id = event.recipient.id;
+    
+    console.log(question);
+    console.log(sender_id);
+    console.log(recipient_id);
 
     if (!question | !sender_id | !recipient_id) {
         console.log('Event is partially defined. Missing question, sender or recipient.');
     } else {
+        console.log('i am last');
+        
         var req_bot = api.textRequest(question, {
             sessionId: sender_id
         });
