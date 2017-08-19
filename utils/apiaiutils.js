@@ -119,7 +119,7 @@ var fulfillmentRequest = function(request, response) {
 		var allitems = body.result.parameters.allitems;
 		var typeofbaggage = body.result.parameters.typeofbaggage;	
 		if(allitems == 'sports'){
-                        var str = fs.readFileSync('./sports.txt', 'utf8');
+                        var str = fs.readFileSync('./sportsallitems.txt', 'utf8');
                         var json = formatApiaiResponse(speech = str,displayText = str)
                     }
                 if(allitems == 'music'){
