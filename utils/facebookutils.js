@@ -21,9 +21,7 @@ var handleFacebookTextMessage = function(event) {
         req_bot.on('response', function(response_bot) {
             var text = response_bot.result.fulfillment.speech;
             var action = response_bot.result.action;
-	console.log('testing chidu');	
-	console.log(text);
-	console.log(action);
+		
 		        if((text == 'May I know which country your travelling to ?') && (action == 'baggagefare')){
 			let messageData = {
 					  "recipient":{
