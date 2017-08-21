@@ -23,6 +23,7 @@ var handleFacebookTextMessage = function(event) {
             var text = response_bot.result.fulfillment.speech;
             var action = response_bot.result.action;
 		console.log(text);
+		console.log(action);
 		        if((text == 'May I know which country you are travelling to ? Canada OR US OR Mexico/Caribbean OR International') && (action == 'baggagefare')){
 			let messageData = {
 					  "recipient":{
