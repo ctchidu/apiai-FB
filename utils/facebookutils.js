@@ -23,7 +23,7 @@ var handleFacebookTextMessage = function(event) {
             var text = response_bot.result.fulfillment.speech;
             var action = response_bot.result.action;
 		
-		        if((text == 'May I know which country you are travelling to ? Canada  OR  US  OR Mexico/Caribbean  OR  International') && (action == 'baggagefare')){
+		        if((text == 'May I know which country you are travelling to ? Canada OR US OR Mexico/Caribbean OR International') && (action == 'baggagefare')){
 			let messageData = {
 					  "recipient":{
 						"id":sender_id
@@ -51,14 +51,14 @@ var handleFacebookTextMessage = function(event) {
 						}
 				}	
                 sendMessage(messageData);                
-           } else if((text == 'May I know in which class you are travelling ?  Economy   OR  Premium Economy  OR  Business ?') && (action == 'baggagefare')){
+           } else if((text == 'May I know in which class you are travelling ? Economy OR Premium Economy OR Business') && (action == 'baggagefare')){
 		   
 		   			let messageData = {
 					  "recipient":{
 						"id":sender_id
 					  },
 					"message":{
-						"text": "May I know in which class you are travelling ?  Economy   OR  Premium Economy  OR  Business ?",
+						"text": "May I know in which class you are travelling ?  Economy   OR  Premium Economy  OR  Business",
 						    "quick_replies":[
 							{"content_type":"text",
 							"title":"Economy",
