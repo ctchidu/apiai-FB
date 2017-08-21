@@ -14,6 +14,12 @@ var handleFacebookTextMessage = function(event) {
         console.log('Event is partially defined. Missing question, sender or recipient.');
     } else {
         
+        console.log(question);
+        console.log(sender_id);
+        console.log(recipient_id);
+        console.log(event);
+        
+        
         var req_bot = api.textRequest(question, {
             sessionId: sender_id
         });
