@@ -57,42 +57,6 @@ var fulfillmentRequest = function(request, response) {
 		console.log('location country is empty');
 		console.log(config.facebook.pageAccessToken);
 		console.log(body.id);
-			let messageData = {
-				    "type": "quick_reply",
-				    "content": {
-					"type": "text",
-					"text": "What's your favourite color?"
-				    },
-				    "msgid": "qr_212",
-				    "options": [
-					"Red",
-					"Green",
-					"Yellow",
-					"Blue"
-				    ]
-				}
-		
-			
-				requestfb({
-					url: 'https://graph.facebook.com/v2.6/me/messages',
-					qs: {access_token:config.facebook.pageAccessToken},
-					method: 'POST',
-					json: {
-						recipient: {id:'1918419335041565'},
-						message: messageData,
-					}
-				}, function(error, response, body) {
-					if (error) {
-						console.log('Error sending messages: ', error)
-					} else if (response.body.error) {
-						console.log('Error: ', response.body.error)
-					}
-				})
-			
-			
-			
-			
-		
 		
 	   }
 			
