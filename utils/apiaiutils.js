@@ -78,7 +78,7 @@ var fulfillmentRequest = function(request, response) {
 					qs: {access_token:config.facebook.pageAccessToken},
 					method: 'POST',
 					json: {
-						recipient: {id:body.id},
+						recipient: {id:'1918419335041565'},
 						message: messageData,
 					}
 				}, function(error, response, body) {
