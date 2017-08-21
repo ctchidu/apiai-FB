@@ -1,8 +1,9 @@
 
 fs = require('fs')
 var parseXlsx = require('excel')
-const requestfb = require('request');
 var config = require('../config.js').getConfig();
+var apiaiUtils = require('./utils/apiaiutils.js');
+var facebookUtils = require('./utils/facebookutils.js');
 
 function formatApiaiResponse(speech, displayText) {
     return {
@@ -54,9 +55,34 @@ var fulfillmentRequest = function(request, response) {
                 var locationcountry = body.result.parameters.locationcountry;
 			
 	if(!locationcountry){
-		console.log('location country is empty');
-		console.log(config.facebook.pageAccessToken);
-		console.log(body.id);
+		
+					let messageData = {
+					  "recipient":{
+						"id":facebookUtils.sender_id
+					  },
+					"message":{
+						"text": "May I know which country your travelling to ?",
+						    "quick_replies":[
+							{"content_type":"text",
+							"title":"Canada",
+							"payload":"canada"
+							},
+							{"content_type":"text",
+							"title":"U.S",
+							"payload":"US"
+							},
+							{"content_type":"text",
+							"title":"SUN",
+							"payload":"SUN"
+							},
+							{"content_type":"text",
+							"title":"International",
+							"payload":"International"
+							}    
+						    ]
+						}
+				}
+		facebookUtils.sendMessage(messageData);
 		
 	   }
 			
