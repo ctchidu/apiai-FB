@@ -13,27 +13,40 @@ var handleFacebookTextMessage = function(event) {
     if (!question | !sender_id | !recipient_id) {
         console.log('Event is partially defined. Missing question, sender or recipient.');
     } else {
-        
-        console.log(question);
-        console.log(sender_id);
-        console.log(recipient_id);
-        console.log(event);
+
         
         if(question == 'test'){
 			let messageData = {
 					  "recipient":{
 						"id":recipient_id
 					  },
-					  "message":{
-							"quick_replies":[
-							  {
-								"content_type":"text",
-								"title":"Red",
-								"payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_RED"
-							  }
-							]
-					  }
+					 "message":{
+						    "quick_replies":[
+							{"content_type":"text",
+							"title":"title1",
+							"payload":"SUPPLEMENT_1"},
+							{"content_type":"text",
+							"title":"title2",
+							"payload":"PAYLOAD_1"
+							}
+						    ],
+						 "attachment":{
+						  "type":"template",
+						  "payload":{
+						    "template_type":"button",
+						    "text":"your text",
+						    "buttons":[
+						      {
+							"type":"postback",
+							"title":"Confirm",
+							"payload":"USER_DEFINED_PAYLOAD"
+						      }
+						    ]
+						  }
+						 }
+						}
 				}
+		console.log(messageData);	
                 sendMessage(messageData);
                 
            }
