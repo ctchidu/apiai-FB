@@ -49,8 +49,11 @@ var fulfillmentRequest = function(request, response) {
               
              case 'baggagefare':   
              
+		var locationcountry = body.result.parameters.locationcountry;
                 var travelclass = body.result.parameters.travelclass;
-                var locationcountry = body.result.parameters.locationcountry;
+                
+			console.log(travelclass);
+			console.log(locationcountry);
 			
 			
                 if(travelclass =='economy') {
