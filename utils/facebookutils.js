@@ -79,7 +79,7 @@ var handleFacebookTextMessage = function(event) {
 		   
 		   sendMessage(messageData);
 		   
-		   }else if (action == 'baggagefare'){
+		   }else{
 		
 
             replyMessage(sender_id, response_bot.result.fulfillment);
