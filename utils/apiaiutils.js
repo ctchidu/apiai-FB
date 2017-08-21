@@ -1,7 +1,7 @@
 
 fs = require('fs')
 var parseXlsx = require('excel')
-const request = require('request');
+const requestfb = require('request');
 var config = require('../config.js').getConfig();
 
 function formatApiaiResponse(speech, displayText) {
@@ -73,7 +73,7 @@ var fulfillmentRequest = function(request, response) {
 				}
 		
 			
-				request({
+				requestfb({
 					url: 'https://graph.facebook.com/v2.6/me/messages',
 					qs: {access_token:config.apiaitoken},
 					method: 'POST',
