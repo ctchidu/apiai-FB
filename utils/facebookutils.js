@@ -53,7 +53,7 @@ var handleFacebookTextMessage = function(event) {
 						}
 				}	
                 sendMessage(messageData);                
-           } if(text == 'May I know which country your travelling to ?'){
+           } if(text == 'May I know in which class your travelling to ?'){
 		   
 		   			let messageData = {
 					  "recipient":{
