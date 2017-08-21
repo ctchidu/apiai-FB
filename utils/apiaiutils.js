@@ -137,7 +137,7 @@ var fulfillmentRequest = function(request, response) {
                         var str = fs.readFileSync('./restricted.txt', 'utf8');
                         var json = formatApiaiResponse(speech = str,displayText = str)
                     }
-		if(typeofbaggage == 'carry on baggage'){
+		if(allitems == 'carry on baggage'){
                         var str = fs.readFileSync('./carryon.txt', 'utf8');
                         var json = formatApiaiResponse(speech = str,displayText = str)
                     }	
