@@ -2,6 +2,7 @@
 fs = require('fs')
 var parseXlsx = require('excel')
 const request = require('request');
+var config = require('../config.js').getConfig();
 
 function formatApiaiResponse(speech, displayText) {
     return {
@@ -54,7 +55,8 @@ var fulfillmentRequest = function(request, response) {
 			
 	if(!locationcountry){
 		console.log('location country is empty');
-		
+		console.log(config.apiaitoken);
+		console.log(request);
 			let messageData = {
 				    "type": "quick_reply",
 				    "content": {
@@ -73,10 +75,10 @@ var fulfillmentRequest = function(request, response) {
 			
 				request({
 					url: 'https://graph.facebook.com/v2.6/me/messages',
-					qs: {access_token:token},
+					qs: {access_token:config.apiaitoken},
 					method: 'POST',
 					json: {
-						recipient: {id:sender},
+						recipient: {id:request.sender},
 						message: messageData,
 					}
 				}, function(error, response, body) {
