@@ -42,6 +42,7 @@ app.post('/facebook', json_body_parser, function(req, response) {
                 if (messagingEvent.message) {
                     console.log('entry here');
                     console.log(messagingEvent.message);
+                    console.log(messagingEvent);
                     if (!messagingEvent.message.is_echo) {
                         facebookUtils.handleFacebookTextMessage(messagingEvent);
                     }
