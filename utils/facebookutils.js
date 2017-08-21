@@ -9,6 +9,7 @@ var handleFacebookTextMessage = function(event) {
     var question = event.message.text;
     var sender_id = event.sender.id;
     var recipient_id = event.recipient.id;
+	console.log(question);
 
     if (!question | !sender_id | !recipient_id) {
         console.log('Event is partially defined. Missing question, sender or recipient.');
