@@ -20,35 +20,27 @@ var handleFacebookTextMessage = function(event) {
 					  "recipient":{
 						"id":sender_id
 					  },
-					 "message":{
+					"message":{
 						    "quick_replies":[
 							{"content_type":"text",
-							"title":"title1",
+							"title":"Canada",
 							"payload":"SUPPLEMENT_1"},
 							{"content_type":"text",
-							"title":"title2",
+							"title":"U.S",
 							"payload":"PAYLOAD_1"
 							}
-						    ],
-						 "attachment":{
-						  "type":"template",
-						  "payload":{
-						    "template_type":"button",
-						    "text":"your text",
-						    "buttons":[
-						      {
-							"type":"postback",
-							"title":"Confirm",
-							"payload":"USER_DEFINED_PAYLOAD"
-						      }
+							{"content_type":"text",
+							"title":"SUN",
+							"payload":"PAYLOAD_1"
+							}
+							{"content_type":"text",
+							"title":"International",
+							"payload":"PAYLOAD_1"
+							}    
 						    ]
-						  }
-						 }
 						}
-				}
-		console.log(messageData);	
-                sendMessage(messageData);
-                
+				}	
+                sendMessage(messageData);                
            }
            else{
            
