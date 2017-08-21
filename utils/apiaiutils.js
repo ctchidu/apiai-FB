@@ -2,8 +2,7 @@
 fs = require('fs')
 var parseXlsx = require('excel')
 var config = require('../config.js').getConfig();
-var apiaiUtils = require('./utils/apiaiutils.js');
-var facebookUtils = require('./utils/facebookutils.js');
+var facebookUtils = require('./facebookutils.js');
 
 function formatApiaiResponse(speech, displayText) {
     return {
