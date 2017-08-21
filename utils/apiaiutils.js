@@ -2,7 +2,6 @@
 fs = require('fs')
 var parseXlsx = require('excel')
 var config = require('../config.js').getConfig();
-var facebookUtils = require('./facebookutils.js');
 
 function formatApiaiResponse(speech, displayText) {
     return {
@@ -52,38 +51,6 @@ var fulfillmentRequest = function(request, response) {
              
                 var travelclass = body.result.parameters.travelclass;
                 var locationcountry = body.result.parameters.locationcountry;
-			
-	if(!locationcountry){
-		
-					let messageData = {
-					  "recipient":{
-						"id":'111111111'
-					  },
-					"message":{
-						"text": "May I know which country your travelling to ?",
-						    "quick_replies":[
-							{"content_type":"text",
-							"title":"Canada",
-							"payload":"canada"
-							},
-							{"content_type":"text",
-							"title":"U.S",
-							"payload":"US"
-							},
-							{"content_type":"text",
-							"title":"SUN",
-							"payload":"SUN"
-							},
-							{"content_type":"text",
-							"title":"International",
-							"payload":"International"
-							}    
-						    ]
-						}
-				}
-		facebookUtils.sendMessage(messageData);
-		
-	   }
 			
 			
                 if(travelclass =='economy') {
