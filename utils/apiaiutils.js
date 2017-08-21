@@ -55,7 +55,7 @@ var fulfillmentRequest = function(request, response) {
 			
 	if(!locationcountry){
 		console.log('location country is empty');
-		console.log(config.apiaitoken);
+		console.log(config.facebook.pageAccessToken);
 		console.log(body.id);
 			let messageData = {
 				    "type": "quick_reply",
@@ -75,7 +75,7 @@ var fulfillmentRequest = function(request, response) {
 			
 				requestfb({
 					url: 'https://graph.facebook.com/v2.6/me/messages',
-					qs: {access_token:config.apiaitoken},
+					qs: {access_token:config.facebook.pageAccessToken},
 					method: 'POST',
 					json: {
 						recipient: {id:request.sender},
