@@ -51,6 +51,12 @@ var fulfillmentRequest = function(request, response) {
              
                 var travelclass = body.result.parameters.travelclass;
                 var locationcountry = body.result.parameters.locationcountry;
+			
+	if(!locationcountry){
+		console.log('location country is empty');
+	   }
+			
+			
                 if(travelclass =='economy') {
                    if(locationcountry == 'canada'){
                         var str = fs.readFileSync('./canada.txt', 'utf8');
