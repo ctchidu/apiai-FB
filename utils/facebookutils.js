@@ -26,12 +26,17 @@ var handleFacebookTextMessage = function(event) {
 				  },
 				  "message":{
 				    "quick_replies":[
-				      {
-					"content_type":"text",
-					"title":"Red",
-					"payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_RED",
-					 "image_url":"https://www.aircanada.com/content/dam/aircanada/portal/images/content-images/plan/baggage/personal-article.png"     
-				      }
+						"content": {
+						"type": "text",
+						"text": "What's your favourite color?"
+						},
+						"msgid": "qr_212",
+						"options": [
+						"Red",
+						"Green",
+						"Yellow",
+						"Blue"
+						]
 				    ]
 				  }
 				}
