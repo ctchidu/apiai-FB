@@ -58,7 +58,7 @@ var fulfillmentRequest = function(request, response) {
 		
 					let messageData = {
 					  "recipient":{
-						"id":facebookUtils.sender_id
+						"id":'111111111'
 					  },
 					"message":{
 						"text": "May I know which country your travelling to ?",
