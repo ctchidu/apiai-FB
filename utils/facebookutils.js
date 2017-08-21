@@ -25,14 +25,13 @@ var handleFacebookTextMessage = function(event) {
 						"id":recipient_id
 					  },
 					  "message":{
-						"quick_replies":[
-						  {
-							"content_type":"text",
-							"text": "What's your favourite color?",
-							"title":"Red",
-							"payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_RED"
-						  }
-						]
+							"quick_replies":[
+							  {
+								"content_type":"text",
+								"title":"Red",
+								"payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_RED"
+							  }
+							]
 					  }
 				}
                 sendMessage(messageData);
