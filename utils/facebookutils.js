@@ -23,9 +23,44 @@ var handleFacebookTextMessage = function(event) {
             var action = response_bot.result.action;
 	console.log('testing chidu');	
 	console.log(text);
-	console.log(action);	
+	console.log(action);
+		
+		        if(text == 'May I know which country your travelling to ?'){
+			let messageData = {
+					  "recipient":{
+						"id":sender_id
+					  },
+					"message":{
+						"text": "May I know which country your travelling to ?",
+						    "quick_replies":[
+							{"content_type":"text",
+							"title":"Canada",
+							"payload":"canada"
+							},
+							{"content_type":"text",
+							"title":"U.S",
+							"payload":"US"
+							},
+							{"content_type":"text",
+							"title":"SUN",
+							"payload":"SUN"
+							},
+							{"content_type":"text",
+							"title":"International",
+							"payload":"International"
+							}    
+						    ]
+						}
+				}	
+                sendMessage(messageData);                
+           }
+		
+		
+		else{
+		
 
             replyMessage(sender_id, response_bot.result.fulfillment);
+		}	
         });
 
         req_bot.on('error', function(error_bot) {
