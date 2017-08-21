@@ -21,7 +21,7 @@ var handleFacebookTextMessage = function(event) {
 						"id":sender_id
 					  },
 					"message":{
-						"text": "TEXT_MESSAGE",
+						"text": "May I know which country your travelling to ?",
 						    "quick_replies":[
 							{"content_type":"text",
 							"title":"Canada",
