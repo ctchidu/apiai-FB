@@ -56,8 +56,9 @@ var handleFacebookTextMessage = function(event) {
             console.log(error_bot);
             replyMessage(sender_id, 'Une erreur est survenue. Un opérateur va prendre le relais d\'ici peu.');
         })
-    }
+    
         req_bot.end();
+	   }
     }
 }
 
