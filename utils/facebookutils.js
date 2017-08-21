@@ -13,40 +13,7 @@ var handleFacebookTextMessage = function(event) {
     if (!question | !sender_id | !recipient_id) {
         console.log('Event is partially defined. Missing question, sender or recipient.');
     } else {
-
-        
-        if(question == 'test'){
-			let messageData = {
-					  "recipient":{
-						"id":sender_id
-					  },
-					"message":{
-						"text": "May I know which country your travelling to ?",
-						    "quick_replies":[
-							{"content_type":"text",
-							"title":"Canada",
-							"payload":"canada"
-							},
-							{"content_type":"text",
-							"title":"U.S",
-							"payload":"US"
-							},
-							{"content_type":"text",
-							"title":"SUN",
-							"payload":"SUN"
-							},
-							{"content_type":"text",
-							"title":"International",
-							"payload":"International"
-							}    
-						    ]
-						}
-				}	
-                sendMessage(messageData);                
-           }
-           else{
-           
-        
+      
         var req_bot = api.textRequest(question, {
             sessionId: sender_id
         });
@@ -54,6 +21,9 @@ var handleFacebookTextMessage = function(event) {
         req_bot.on('response', function(response_bot) {
             var text = response_bot.result.fulfillment.speech;
             var action = response_bot.result.action;
+	console.log('testing chidu');	
+	console.log(text);
+	console.log(action);	
 
             replyMessage(sender_id, response_bot.result.fulfillment);
         });
@@ -65,7 +35,7 @@ var handleFacebookTextMessage = function(event) {
         })
     
         req_bot.end();
-	   }
+	   
     }
 }
 
