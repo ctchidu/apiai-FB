@@ -22,7 +22,7 @@ var handleFacebookTextMessage = function(event) {
         if(question == 'test'){
 			let messageData = {
 					  "recipient":{
-						"id":"<PSID>"
+						"id":recipient_id
 					  },
 					  "message":{
 						"quick_replies":[
