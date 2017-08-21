@@ -21,6 +21,7 @@ var handleFacebookTextMessage = function(event) {
         
         if(question == 'test'){
             	let messageData = {
+				    "recipient":{"id":recipient_id},
 				    "type": "quick_reply",
 				    "content": {
 					"type": "text",
