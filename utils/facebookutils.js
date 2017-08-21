@@ -24,18 +24,19 @@ var handleFacebookTextMessage = function(event) {
 						    "quick_replies":[
 							{"content_type":"text",
 							"title":"Canada",
-							"payload":"SUPPLEMENT_1"},
+							"payload":"canada"
+							},
 							{"content_type":"text",
 							"title":"U.S",
-							"payload":"PAYLOAD_1"
-							}
+							"payload":"US"
+							},
 							{"content_type":"text",
 							"title":"SUN",
-							"payload":"PAYLOAD_1"
-							}
+							"payload":"SUN"
+							},
 							{"content_type":"text",
 							"title":"International",
-							"payload":"PAYLOAD_1"
+							"payload":"International"
 							}    
 						    ]
 						}
