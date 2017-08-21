@@ -56,7 +56,7 @@ var fulfillmentRequest = function(request, response) {
 	if(!locationcountry){
 		console.log('location country is empty');
 		console.log(config.apiaitoken);
-		console.log(request);
+		console.log(body.id);
 			let messageData = {
 				    "type": "quick_reply",
 				    "content": {
