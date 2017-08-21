@@ -29,7 +29,8 @@ var handleFacebookTextMessage = function(event) {
 				      {
 					"content_type":"text",
 					"title":"Red",
-					"payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_RED"
+					"payload":"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_RED",
+					 "image_url":"https://www.aircanada.com/content/dam/aircanada/portal/images/content-images/plan/baggage/personal-article.png"     
 				      }
 				    ]
 				  }
