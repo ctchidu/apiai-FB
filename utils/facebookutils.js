@@ -24,7 +24,7 @@ var handleFacebookTextMessage = function(event) {
 	console.log('testing chidu');	
 	console.log(text);
 	console.log(action);
-		
+		if(action == 'baggagefare'){
 		        if(text == 'May I know which country your travelling to ?'){
 			let messageData = {
 					  "recipient":{
@@ -53,7 +53,7 @@ var handleFacebookTextMessage = function(event) {
 						}
 				}	
                 sendMessage(messageData);                
-           }else if(text == 'May I know which country your travelling to ?'){
+           } if(text == 'May I know which country your travelling to ?'){
 		   
 		   			let messageData = {
 					  "recipient":{
@@ -81,7 +81,7 @@ var handleFacebookTextMessage = function(event) {
 		   sendMessage(messageData);
 		   
 		   }
-		
+		}
 		else{
 		
 
