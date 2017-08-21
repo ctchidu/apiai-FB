@@ -78,7 +78,7 @@ var handleFacebookTextMessage = function(event) {
 		   
 		   sendMessage(messageData);
 		   
-		   }eise if((text == 'You want to know about? Sports  or Music  or Hunting  or Restricted items or Carry on baggage') && (action == 'allitems')){
+		   }else if((text == 'You want to know about? Sports  or Music  or Hunting  or Restricted items or Carry on baggage') && (action == 'allitems')){
 			    
 		   			let messageData = {
 					  "recipient":{
