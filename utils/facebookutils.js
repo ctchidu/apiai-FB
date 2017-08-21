@@ -78,7 +78,45 @@ var handleFacebookTextMessage = function(event) {
 		   
 		   sendMessage(messageData);
 		   
-		   }else{
+		   }eise if((text == 'You want to know about? Sports  or Music  or Hunting  or Restricted items or Carry on baggage') && (action == 'allitems')){
+			    
+		   			let messageData = {
+					  "recipient":{
+						"id":sender_id
+					  },
+					"message":{
+						"text": "You want to know about? Sports  or Music  or Hunting  or Restricted items or Carry on baggage",
+						    "quick_replies":[
+							{"content_type":"text",
+							"title":"Sports",
+							"payload":"sports"
+							},
+							{"content_type":"text",
+							"title":"Music",
+							"payload":"music"
+							},
+							{"content_type":"text",
+							"title":"Hunting",
+							"payload":"hunting"
+							},
+							{"content_type":"text",
+							"title":"Restricted items",
+							"payload":"restricted"
+							},
+							{"content_type":"text",
+							"title":"Carry on baggage",
+							"payload":"Carry on baggage"
+							}    
+						    ]
+						}
+				}	
+                sendMessage(messageData); 
+		   
+		   }
+		
+		
+		
+		else{
 		
 
             replyMessage(sender_id, response_bot.result.fulfillment);
