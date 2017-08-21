@@ -40,7 +40,7 @@ var handleFacebookTextMessage = function(event) {
 							"payload":"US"
 							},
 							{"content_type":"text",
-							"title":"SUN",
+							"title":"Mexico/Caribbean",
 							"payload":"SUN"
 							},
 							{"content_type":"text",
