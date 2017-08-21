@@ -21,6 +21,7 @@ var handleFacebookTextMessage = function(event) {
 						"id":sender_id
 					  },
 					"message":{
+						"text": "TEXT_MESSAGE",
 						    "quick_replies":[
 							{"content_type":"text",
 							"title":"Canada",
