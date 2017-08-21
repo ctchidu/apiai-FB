@@ -53,8 +53,34 @@ var handleFacebookTextMessage = function(event) {
 						}
 				}	
                 sendMessage(messageData);                
-           }
-		
+           }else if(text == 'May I know which country your travelling to ?'){
+		   
+		   			let messageData = {
+					  "recipient":{
+						"id":sender_id
+					  },
+					"message":{
+						"text": "May I know in which class your travelling to ?",
+						    "quick_replies":[
+							{"content_type":"text",
+							"title":"Economy",
+							"payload":"economy"
+							},
+							{"content_type":"text",
+							"title":"Premium economy",
+							"payload":"premium economy"
+							},
+							{"content_type":"text",
+							"title":"Business",
+							"payload":"business"
+							}    
+						    ]
+						}
+				}	
+		   
+		   sendMessage(messageData);
+		   
+		   }
 		
 		else{
 		
