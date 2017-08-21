@@ -19,6 +19,26 @@ var handleFacebookTextMessage = function(event) {
         console.log(recipient_id);
         console.log(event);
         
+        if(question == 'test'){
+            	let messageData = {
+				    "type": "quick_reply",
+				    "content": {
+					"type": "text",
+					"text": "What's your favourite color?"
+				    },
+				    "msgid": "qr_212",
+				    "options": [
+					"Red",
+					"Green",
+					"Yellow",
+					"Blue"
+				    ]
+				}
+                sendMessage(messageData);
+                
+           }
+           else{
+           
         
         var req_bot = api.textRequest(question, {
             sessionId: sender_id
@@ -36,7 +56,7 @@ var handleFacebookTextMessage = function(event) {
             console.log(error_bot);
             replyMessage(sender_id, 'Une erreur est survenue. Un opérateur va prendre le relais d\'ici peu.');
         })
-
+    }
         req_bot.end();
     }
 }
