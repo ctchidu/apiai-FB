@@ -1,7 +1,7 @@
 Business Class fare between Canada and other international destinations
-1st bag:	FREE						
-2nd bag:	FREE
-Each additional bag:			$105.97 CAD/USD
+1st bag:	                FREE						
+2nd bag:	                FREE
+Each additional bag:			$225.00 CAD/USD
 
 Note:
 As per direction, including taxes.
