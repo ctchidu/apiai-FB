@@ -5,21 +5,6 @@ var apiai = require('apiai')
 var api = apiai(config.apiaitoken);
 
 
-var facebookGreeting = function(event) {
-	var sender_id = event.sender.id;
-		let messageData = {
-			  "recipient":{
-				"id":sender_id
-			  },
-			"message":{
-				"text": "Hello!! Warm Greetings :) How can I help you with Baggage related queries ?",
-				}
-		}	
-                sendMessage(messageData);
-}
-
-
-
 var handleFacebookTextMessage = function(event) {
     var question = event.message.text;
     var sender_id = event.sender.id;
@@ -191,8 +176,7 @@ var replyMessage = function(recipientId, fulfillment) {
     }
 }
 
-module.exports = {
-    facebookGreeting,	
+module.exports = {	
     handleFacebookTextMessage
 }
 
