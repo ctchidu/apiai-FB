@@ -172,7 +172,7 @@ var fulfillmentRequest = function(request, response) {
              			 break;
 				 }	 
 			  }
-		if(a === 0){
+		if(a == 0){
 		      var str = fs.readFileSync('./fallback.txt', 'utf8');
 		      var json = formatApiaiResponse(speech = str,displayText = str)  
 		     response.json(json);
