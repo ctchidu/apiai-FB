@@ -36,8 +36,6 @@ app.get('/facebook', json_body_parser, function(request, response) {
 // Webhook for Facebook - handle message requests
 app.post('/facebook', json_body_parser, function(req, response) {
     const data = req.body;
-    console.log('chidu');
-    console.log(data);
     if (data.object === "page") {
         data.entry.forEach(pageEntry => {
             pageEntry.messaging.forEach(messagingEvent => {
@@ -47,11 +45,8 @@ app.post('/facebook', json_body_parser, function(req, response) {
                     }
                 }
 				else if (messagingEvent.postback && messagingEvent.postback.payload) {
-					console.log('payload');
-					console.log(messagingEvent.postback.payload);
-					console.log('payload');
                             if (messagingEvent.postback.payload === "GET_STARTED") {
-                                console.log('i am here');
+				    
                             }else {
                                 facebookUtils.handleFacebookTextMessage(messagingEvent);
                             }
