@@ -158,12 +158,12 @@ var fulfillmentRequest = function(request, response) {
 	     case 'exceldata':
 			
 		var splItems = body.result.parameters.splItems;
-		var a = true;
-		console.log(splItems);	
-		console.log(a);		
+	
 		
 			parseXlsx('exceldata.xlsx', function(err, data) {
- 
+ 		var a = true;
+		console.log(splItems);	
+		console.log(a);	
 			var jsonData = JSON.parse(JSON.stringify(convertToJSON(data)));
 			for(i = 0; i < jsonData.length; i++){
      
@@ -179,6 +179,7 @@ var fulfillmentRequest = function(request, response) {
 		      var str = fs.readFileSync('./fallback.txt', 'utf8');
 		      var json = formatApiaiResponse(speech = str,displayText = str)  
 		     response.json(json);
+			break;
   		 }
 		});
 			
