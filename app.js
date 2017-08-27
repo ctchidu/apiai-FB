@@ -46,7 +46,7 @@ app.post('/facebook', json_body_parser, function(req, response) {
                 }
 				else if (messagingEvent.postback && messagingEvent.postback.payload) {
                             if (messagingEvent.postback.payload === "GET_STARTED") {
-				    
+				    facebookUtils.facebookGreeting(messagingEvent);
                             }else {
                                 facebookUtils.handleFacebookTextMessage(messagingEvent);
                             }
