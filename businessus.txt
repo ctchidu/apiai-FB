@@ -1,7 +1,7 @@
 Business Class fare for travelling between Canada and the U.S.
-1st bag:			        FREE						
-2nd bag:				FREE
-Each additional bag:			$105.97 CAD/USD
+1st bag:              FREE						
+2nd bag:              FREE
+Each additional bag:  $105.00 CAD/USD
 
 Note:
 As per direction, including taxes.
