@@ -188,3 +188,9 @@ var replyMessage = function(recipientId, fulfillment) {
 module.exports = {
     handleFacebookTextMessage
 }
+
+module.exports = {
+    facebookGreeting
+}
+
+
