@@ -50,7 +50,7 @@ app.post('/facebook', json_body_parser, function(req, response) {
 					console.log('payload');
 					console.log(messagingEvent.postback.payload);
 					console.log('payload');
-                            if (messagingEvent.postback.payload === "FACEBOOK_WELCOME") {
+                            if (messagingEvent.postback.payload === "GET_STARTED") {
                                 console.log('i am here');
                             }else {
                                 facebookUtils.handleFacebookTextMessage(messagingEvent);
