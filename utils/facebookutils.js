@@ -6,9 +6,6 @@ var api = apiai(config.apiaitoken);
 
 
 var facebookGreeting = function(event) {
-    var question = event.message.text;
-    var sender_id = event.sender.id;
-    var recipient_id = event.recipient.id;
 	console.log('called here for greeting');
 }
 
