@@ -13,6 +13,7 @@ var api = apiai(config.apiaitoken);
 // Import our own webhook functions
 var apiaiUtils = require('./utils/apiaiutils.js');
 var facebookUtils = require('./utils/facebookutils.js');
+var facebookGreeting = require('./utils/greeting.js');
 
 // Define port
 app.set('port', (process.env.PORT || 5000));
@@ -43,7 +44,14 @@ app.post('/facebook', json_body_parser, function(req, response) {
                     if (!messagingEvent.message.is_echo) {
                         facebookUtils.handleFacebookTextMessage(messagingEvent);
                     }
-                }				
+                }
+                else if (messagingEvent.postback && messagingEvent.postback.payload) {
+                            if (messagingEvent.postback.payload === "GET_STARTED") {
+				                facebookGreeting.facebookGreeting(messagingEvent);
+                            }else {
+                                facebookUtils.handleFacebookTextMessage(messagingEvent);
+                            }
+                        }
             })
         })
     }
