@@ -47,6 +47,9 @@ app.post('/facebook', json_body_parser, function(req, response) {
                     }
                 }
 				else if (messagingEvent.postback && messagingEvent.postback.payload) {
+					console.log('payload');
+					console.log(messagingEvent.postback.payload);
+					console.log('payload');
                             if (messagingEvent.postback.payload === "FACEBOOK_WELCOME") {
                                 console.log('i am here');
                             }else {
