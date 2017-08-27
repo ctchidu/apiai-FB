@@ -41,19 +41,9 @@ app.post('/facebook', json_body_parser, function(req, response) {
             pageEntry.messaging.forEach(messagingEvent => {
                 if (messagingEvent.message) {
                     if (!messagingEvent.message.is_echo) {
-			    console.log('1');
                         facebookUtils.handleFacebookTextMessage(messagingEvent);
                     }
-                }
-				else if (messagingEvent.postback && messagingEvent.postback.payload) {
-                            if (messagingEvent.postback.payload === "GET_STARTED") {
-				    console.log('2');
-				    facebookUtils.facebookGreeting(messagingEvent);
-                            }else {
-				    console.log('3');
-                                facebookUtils.handleFacebookTextMessage(messagingEvent);
-                            }
-                        }
+                }				
             })
         })
     }
