@@ -158,7 +158,9 @@ var fulfillmentRequest = function(request, response) {
 	     case 'exceldata':
 			
 		var splItems = body.result.parameters.splItems;
-		var a = true;	
+		var a = true;
+		console.log(splItems);	
+		console.log(a);		
 		
 			parseXlsx('exceldata.xlsx', function(err, data) {
  
@@ -172,6 +174,7 @@ var fulfillmentRequest = function(request, response) {
              			 break;
 				 }	 
 			  }
+		console.log(a);		
 		if(a){
 		      var str = fs.readFileSync('./fallback.txt', 'utf8');
 		      var json = formatApiaiResponse(speech = str,displayText = str)  
