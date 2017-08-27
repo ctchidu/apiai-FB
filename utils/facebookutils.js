@@ -6,7 +6,16 @@ var api = apiai(config.apiaitoken);
 
 
 var facebookGreeting = function(event) {
-	console.log('called here for greeting');
+	var sender_id = event.sender.id;
+		let messageData = {
+			  "recipient":{
+				"id":sender_id
+			  },
+			"message":{
+				"text": "Hello!! Warm Greetings :) How can I help you with Baggage related queries ?",
+				}
+		}	
+                sendMessage(messageData);
 }
 
 
