@@ -5,11 +5,19 @@ var apiai = require('apiai')
 var api = apiai(config.apiaitoken);
 
 
+var facebookGreeting = function(event) {
+    var question = event.message.text;
+    var sender_id = event.sender.id;
+    var recipient_id = event.recipient.id;
+	console.log('called here for greeting');
+}
+
+
+
 var handleFacebookTextMessage = function(event) {
     var question = event.message.text;
     var sender_id = event.sender.id;
     var recipient_id = event.recipient.id;
-	console.log(question);
 
     if (!question | !sender_id | !recipient_id) {
         console.log('Event is partially defined. Missing question, sender or recipient.');
@@ -22,8 +30,7 @@ var handleFacebookTextMessage = function(event) {
         req_bot.on('response', function(response_bot) {
             var text = response_bot.result.fulfillment.speech;
             var action = response_bot.result.action;
-		console.log(text);
-		console.log(action);
+
 		        if((text == 'May I know which country you are travelling to ? Canada OR US OR Mexico/Caribbean OR International') && (action == 'baggagefare')){
 			let messageData = {
 					  "recipient":{
