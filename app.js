@@ -54,7 +54,7 @@ app.post('/facebook', json_body_parser, function(req, response) {
                             }else if(messagingEvent.postback.payload === "baggage fare"){
 				    facebookBagFare.facebookBagFare(messagingEvent);
 				     
-			    }else if(messagingEvent.postback.payload === "baggage fare"){
+			    }else if(messagingEvent.postback.payload === "baggage status"){
 				    facebookBagStatus.facebookBagStatus(messagingEvent);
 				     
 			    }else {
