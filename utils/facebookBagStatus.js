@@ -18,7 +18,7 @@ function facebookBagStatus(event) {
                   template_type: "generic",
                   elements: [{
                     title: "Thank you for contacting us",
-                    subtitle: "Kindly visit our site for more information",
+                    subtitle: "Kindly visit our site for more information on baggage status",
                     image_url: "http://www.camasformation.fr/wp-content/uploads/2014/09/wt-small.jpg",
                     buttons: [{
 			          type:"web_url",
