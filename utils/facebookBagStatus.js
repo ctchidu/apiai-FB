@@ -17,8 +17,8 @@ function facebookBagStatus(event) {
                 payload: {
                   template_type: "generic",
                   elements: [{
-                    title: movieObj.Title,
-                    subtitle: "Is this the movie you are looking for?",
+                    title: "Thank you for contacting us",
+                    subtitle: "Kindly visit our site for more information",
                     image_url: "http://www.global-nets.fr/SITEGNS/res/anilogo.gif",
                     buttons: [{
                       type: "postback",
