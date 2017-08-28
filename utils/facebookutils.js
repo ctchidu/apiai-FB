@@ -95,7 +95,7 @@ var handleFacebookTextMessage = function(event) {
 							"payload":"SUPER"
 							},
 							{"content_type":"text",
-							"title":"ELITE 75K,ELITE 50K,ELITE 35K",
+							"title":"ELITE 75K,50K,35K",
 							"payload":"ELITE"
 							},
 							{"content_type":"text",
