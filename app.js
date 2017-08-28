@@ -49,7 +49,7 @@ app.post('/facebook', json_body_parser, function(req, response) {
 			console.log(messagingEvent.postback.payload);
                             if (messagingEvent.postback.payload === "GET_STARTED") {
 				                facebookGreeting.facebookGreeting(messagingEvent);
-                            }else if((messagingEvent.postback.payload === "baggage fare"){
+                            }else if(messagingEvent.postback.payload === "baggage fare"){
 				    req.body.action='baggagefare';
 				     apiaiUtils.fulfillmentRequest(req, response);
 				     
