@@ -86,7 +86,7 @@ var handleFacebookTextMessage = function(event) {
 						"id":sender_id
 					  },
 					"message":{
-						"text": "May I know in which class you are travelling ?  Economy   OR  Premium Economy  OR  Business",
+						"text": "What is your AIR CANADA ALTITUDE STATUS? NONE OR SUPER ELITE 100K OR ELITE 75K,ELITE 50K,ELITE 35K OR PRESTIGE 25K OR STAR ALLIANCE GOLD OR STAR ALLIANCE SILVER",
 						    "quick_replies":[
 							{"content_type":"text",
 							"title":"NONE",
