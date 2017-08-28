@@ -53,11 +53,7 @@ var fulfillmentRequest = function(request, response) {
                 var travelclass = body.result.parameters.travelclass;
 		var frequentfly = body.result.parameters.frequentfly	
                 
-			console.log(travelclass);
-			console.log(locationcountry);
-			console.log(frequentfly);
-		if(frequentfly){	
-		console.log(frequentfly);	
+		if(frequentfly){		
 			
                 if(travelclass =='economy') {
                    if(locationcountry == 'canada'){
@@ -165,9 +161,7 @@ var fulfillmentRequest = function(request, response) {
 	
 		
 			parseXlsx('exceldata.xlsx', function(err, data) {
- 		var a = true;
-		console.log(splItems);	
-		console.log(a);	
+ 		var a = true;	
 			var jsonData = JSON.parse(JSON.stringify(convertToJSON(data)));
 			for(i = 0; i < jsonData.length; i++){
      
@@ -177,8 +171,7 @@ var fulfillmentRequest = function(request, response) {
 				 response.json(json);
              			 break;
 				 }	 
-			  }
-		console.log(a);		
+			  }		
 		if(a){
 		      var str = fs.readFileSync('./fallback.txt', 'utf8');
 		      var json = formatApiaiResponse(speech = str,displayText = str)  
