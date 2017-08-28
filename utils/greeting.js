@@ -11,9 +11,27 @@ var facebookGreeting = function(event) {
 			  "recipient":{
 				"id":sender_id
 			  },
-			"message":{
-				"text": "Hello!! Warm Greetings :) How can I help you with Baggage related queries ?",
-				}
+			  "message":{
+    "attachment":{
+      "type":"template",
+      "payload":{
+        "template_type":"button",
+        "text":"What do you want to do next?",
+        "buttons":[
+          {
+            "type":"web_url",
+            "url":"https://www.messenger.com",
+            "title":"Visit Messenger"
+          },
+          {
+            "type":"web_url",
+            "url":"https://www.messenger.com",
+            "title":"Visit Messenger"
+          }
+        ]
+      }
+    }
+  }
 		}	
                 sendMessage(messageData);
 }
