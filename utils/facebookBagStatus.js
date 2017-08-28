@@ -12,14 +12,22 @@ function facebookBagStatus(event) {
       id: sender_id
     },
     message: {
-      attachment: {
-        type: "image",
-        payload: {
-          url: "http://www.global-nets.fr/SITEGNS/res/anilogo.gif",
-	web_url:"https://www.aircanada.com/ca/en/aco/home/plan/baggage/delayed-damaged-baggage.html"	
-        }
-	      
-      }
+                    attachment: {
+                type: "template",
+                payload: {
+                  template_type: "generic",
+                  elements: [{
+                    title: movieObj.Title,
+                    subtitle: "Is this the movie you are looking for?",
+                    image_url: "http://www.global-nets.fr/SITEGNS/res/anilogo.gif",
+                    buttons: [{
+                      type: "postback",
+                      title: "Yes",
+                      payload: "Correct"
+                    }]
+                  }]
+                }
+              }
     }
   };
 
