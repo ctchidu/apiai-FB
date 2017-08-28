@@ -14,6 +14,7 @@ var api = apiai(config.apiaitoken);
 var apiaiUtils = require('./utils/apiaiutils.js');
 var facebookUtils = require('./utils/facebookutils.js');
 var facebookGreeting = require('./utils/greeting.js');
+var facebookBagFare = require('./utils/facebookBagFare.js');
 
 // Define port
 app.set('port', (process.env.PORT || 5000));
@@ -50,7 +51,7 @@ app.post('/facebook', json_body_parser, function(req, response) {
                             if (messagingEvent.postback.payload === "GET_STARTED") {
 				                facebookGreeting.facebookGreeting(messagingEvent);
                             }else if(messagingEvent.postback.payload === "baggage fare"){
-				     apiaiUtils.fulfillmentRequest(req, response);
+				    facebookBagFare.facebookBagFare(messagingEvent);
 				     
 			    }else {
                                 facebookUtils.handleFacebookTextMessage(messagingEvent);
