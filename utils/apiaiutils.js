@@ -51,7 +51,9 @@ var fulfillmentRequest = function(request, response) {
              
 		var locationcountry = body.result.parameters.locationcountry;
                 var travelclass = body.result.parameters.travelclass;
-		var frequentfly = body.result.parameters.frequentfly	
+		var frequentfly = body.result.parameters.frequentfly;
+			console.log(locationcountry);
+			
                 
 		if(frequentfly){		
 			
