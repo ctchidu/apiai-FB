@@ -77,6 +77,45 @@ var handleFacebookTextMessage = function(event) {
 		   
 		   sendMessage(messageData);
 		   
+		   }else if((text == 'What is your AIR CANADA ALTITUDE STATUS? NONE OR SUPER ELITE 100K OR ELITE 75K,ELITE 50K,ELITE 35K OR PRESTIGE 25K OR STAR ALLIANCE GOLD OR STAR ALLIANCE SILVER') && (action == 'baggagefare')){
+		   
+		   			let messageData = {
+					  "recipient":{
+						"id":sender_id
+					  },
+					"message":{
+						"text": "May I know in which class you are travelling ?  Economy   OR  Premium Economy  OR  Business",
+						    "quick_replies":[
+							{"content_type":"text",
+							"title":"NONE",
+							"payload":"NONE"
+							},
+							{"content_type":"text",
+							"title":"SUPER ELITE 100K",
+							"payload":"SUPER"
+							},
+							{"content_type":"text",
+							"title":"ELITE 75K,ELITE 50K,ELITE 35K",
+							"payload":"ELITE"
+							},
+							{"content_type":"text",
+							"title":"PRESTIGE 25K",
+							"payload":"PRESTIGE"
+							},
+							{"content_type":"text",
+							"title":"STAR ALLIANCE GOLD",
+							"payload":"STAR ALLIANCE GOLD"
+							},
+							{"content_type":"text",
+							"title":"STAR ALLIANCE SILVER",
+							"payload":"STAR ALLIANCE SILVER"
+							}             
+						    ]
+						}
+				}	
+		   
+		   sendMessage(messageData);
+		   
 		   }else if((text == 'You want to know about? Sports or Music or Hunting or Restricted items or Carry on baggage') && (action == 'all.items')){
 			    
 		   			let messageData = {
