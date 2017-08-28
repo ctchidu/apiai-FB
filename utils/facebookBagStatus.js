@@ -21,9 +21,9 @@ function facebookBagStatus(event) {
                     subtitle: "Kindly visit our site for more information",
                     image_url: "http://www.global-nets.fr/SITEGNS/res/anilogo.gif",
                     buttons: [{
-                      type: "postback",
-                      title: "Yes",
-                      payload: "Correct"
+			          type:"web_url",
+                url:"https://www.aircanada.com/ca/en/aco/home/plan/baggage/delayed-damaged-baggage.html",
+                title:"View Website"
                     }]
                   }]
                 }
