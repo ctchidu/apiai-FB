@@ -4,7 +4,6 @@ var config = require('../config.js').getConfig();
 var apiai = require('apiai')
 var api = apiai(config.apiaitoken);
 
-
 function facebookBagStatus(event) {
   
   var sender_id = event.sender.id;
@@ -12,34 +11,15 @@ function facebookBagStatus(event) {
     recipient: {
       id: sender_id
     },
-    message: {   
-    attachment:{
-      type:"template",
-      payload:{
-        template_type:"generic",
-        elements:[
-           {
-            title:"Thank you for contacting us",
-            image_url:"http://www.global-nets.fr/SITEGNS/res/anilogo.gif",
-            subtitle:"Kindly visit our site for more information",
-            default_action: {
-              type: "web_url",
-              url: "https://www.aircanada.com/ca/en/aco/home/plan/baggage/delayed-damaged-baggage.html",
-              messenger_extensions: true,
-              webview_height_ratio: "tall",
-              fallback_url: "https://www.aircanada.com/ca/en/aco/home/plan/baggage/delayed-damaged-baggage.html"
-            },
-            buttons:[
-              {
-			  type:"web_url",
-                url:"https://www.aircanada.com/ca/en/aco/home/plan/baggage/delayed-damaged-baggage.html",
-                title:"View Website"
-              }              
-            ]      
-          }
-        ]
+    message: {
+      attachment: {
+        type: "image",
+        payload: {
+          url: "http://www.global-nets.fr/SITEGNS/res/anilogo.gif",
+	web_url:"https://www.aircanada.com/ca/en/aco/home/plan/baggage/delayed-damaged-baggage.html"	
+        }
+	      
       }
-    }
     }
   };
 
