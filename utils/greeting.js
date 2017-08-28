@@ -16,17 +16,17 @@ var facebookGreeting = function(event) {
       "type":"template",
       "payload":{
         "template_type":"button",
-        "text":"What do you want to do next?",
+        "text":"Hello!! Warm Greetings :) How can I help you with Baggage related queries ?",
         "buttons":[
           {
-            "type":"web_url",
-            "url":"https://www.messenger.com",
-            "title":"Visit Messenger"
+            "type":"postback",
+            title: "Baggage fares",
+            payload: "baggage fare"
           },
           {
-            "type":"web_url",
-            "url":"https://www.messenger.com",
-            "title":"Visit Messenger"
+            "type":"postback",
+            title: "Baggage status",
+            payload: "baggage status"
           }
         ]
       }
