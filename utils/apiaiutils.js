@@ -66,6 +66,10 @@ var fulfillmentRequest = function(request, response) {
                         var str = fs.readFileSync('./us.txt', 'utf8');
                         var json = formatApiaiResponse(speech = str,displayText = str)
                 }
+		if(locationcountry == 'U.S'){
+                        var str = fs.readFileSync('./us.txt', 'utf8');
+                        var json = formatApiaiResponse(speech = str,displayText = str)
+                }	
                  if(locationcountry == 'SUN'){
                         var str = fs.readFileSync('./sun.txt', 'utf8');
                         var json = formatApiaiResponse(speech = str,displayText = str)
@@ -86,6 +90,10 @@ var fulfillmentRequest = function(request, response) {
                         var str = fs.readFileSync('./premiumus.txt', 'utf8');
                         var json = formatApiaiResponse(speech = str,displayText = str)
                 }
+		                 if(locationcountry == 'U.S'){
+                        var str = fs.readFileSync('./premiumus.txt', 'utf8');
+                        var json = formatApiaiResponse(speech = str,displayText = str)
+                }	
                  if(locationcountry == 'SUN'){
                         var str = fs.readFileSync('./premiumsun.txt', 'utf8');
                         var json = formatApiaiResponse(speech = str,displayText = str)
@@ -106,6 +114,10 @@ var fulfillmentRequest = function(request, response) {
                         var str = fs.readFileSync('./businessus.txt', 'utf8');
                         var json = formatApiaiResponse(speech = str,displayText = str)
                 }
+		                 if(locationcountry == 'U.S'){
+                        var str = fs.readFileSync('./businessus.txt', 'utf8');
+                        var json = formatApiaiResponse(speech = str,displayText = str)
+                }	
                  if(locationcountry == 'SUN'){
                         var str = fs.readFileSync('./businesssun.txt', 'utf8');
                         var json = formatApiaiResponse(speech = str,displayText = str)
