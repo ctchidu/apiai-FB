@@ -57,7 +57,7 @@ var fulfillmentRequest = function(request, response) {
 			console.log(locationcountry);
 			console.log(frequentfly);
 		if(frequentfly){	
-			
+		console.log(frequentfly);	
 			
                 if(travelclass =='economy') {
                    if(locationcountry == 'canada'){
@@ -117,8 +117,9 @@ var fulfillmentRequest = function(request, response) {
                         var json = formatApiaiResponse(speech = str,displayText = str)
                 }
                        }
-             response.json(json);
-		}
+			
+		}	
+             response.json(json);		
              break;
   
                 
