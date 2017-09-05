@@ -7,32 +7,40 @@ var api = apiai(config.apiaitoken);
 
 var facebookGreeting = function(event) {
 	var sender_id = event.sender.id;
-		let messageData = {
-			  "recipient":{
-				"id":sender_id
-			  },
-			  "message":{
-    "attachment":{
-      "type":"template",
-      "payload":{
-        "template_type":"button",
-        "text":"Hello!! Warm Greetings :) How can I help you with Baggage related queries ?",
-        "buttons":[
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: 
+    {
+      "attachment": {
+        "type": "template",
+        "payload": {
+         "template_type": "generic",
+          "elements": [
           {
-            "type":"postback",
-            title: "Baggage fares",
-            payload: "baggage fare"
-          },
-          {
-            "type":"postback",
-            title: "Baggage status",
-            payload: "baggage status"
+            "title": "Baggage Bot",
+            "subtitle": "Welcome to Baggage Bot!",
+            "item_url": "https://www.aircanada.com/ca/en/aco/home.html",               
+            "image_url": "https://github.com/ctchidu/apiai-FB/blob/master/AC.jpg",
+            "buttons": [
+            {
+              "type": "postback",
+              "title": "Baggage fares",
+              "payload": "baggage fare"
+            },
+            {
+              "type": "postback",
+              "title": "Baggage status",
+              "payload": "baggage status"
+            }
+            ]
           }
-        ]
+          ]
+        }
       }
     }
-  }
-		}	
+  };	
                 sendMessage(messageData);
 }
 
