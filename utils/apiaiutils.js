@@ -73,7 +73,9 @@ var fulfillmentRequest = function(request, response) {
 	 	if((jsonData[i].COUNTRY == locationcountry) && (jsonData[i].ALTITUDE == frequentfly) && (jsonData[i].CLASS == travelclass)){	
 		     console.log(jsonData[i].FARE);
 			var json = formatApiaiResponse(speech = jsonData[i].FARE,displayText = jsonData[i].FARE);
-			console.log(json);	
+			console.log(json);
+			return response.json(json);
+                	break;
 			 }	 
 		  }		
 		});
@@ -81,10 +83,7 @@ var fulfillmentRequest = function(request, response) {
 			sleep(5000, function() {
    				// executes after one second, and blocks the thread
 				});
-			console.log('i am befor going');
-			console.log(json);
-			return response.json(json);
-                	break;
+
                 
          case 'all.items':
 
