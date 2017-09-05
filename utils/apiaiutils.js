@@ -65,20 +65,8 @@ var fulfillmentRequest = function(request, response) {
 		console.log(frequentfly);	
 			
 			
-			parseXlsx('BAG_FARE_DATA.xlsx', function(err, data) {	
-			var jsonData = JSON.parse(JSON.stringify(convertToJSON(data)));
-			for(i = 0; i < jsonData.length; i++){
-		 if((jsonData[i].COUNTRY == locationcountry) && (jsonData[i].ALTITUDE == frequentfly) && (jsonData[i].CLASS == travelclass)){
-			console.log(jsonData[i].COUNTRY);
-			console.log(jsonData[i].ALTITUDE);
-			console.log(jsonData[i].CLASS);	
-			 console.log(jsonData[i].FARE);	
-			 var json = formatApiaiResponse(speech = jsonData[i].FARE,displayText = jsonData[i].FARE)
-
-				 }	 
-			  }		
-
-		});	
+                        var str = fs.readFileSync('./businesscanada.txt', 'utf8');
+                        var json = formatApiaiResponse(speech = str,displayText = str)	
                 
 			
 		}	
