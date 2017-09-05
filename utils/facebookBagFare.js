@@ -16,7 +16,7 @@ var facebookBagFare = function(event) {
 						    "quick_replies":[
 							{"content_type":"text",
 							"title":"Canada",
-							"payload":"canada"
+							"payload":"CANADA"
 							},
 							{"content_type":"text",
 							"title":"U.S",
@@ -28,7 +28,7 @@ var facebookBagFare = function(event) {
 							},
 							{"content_type":"text",
 							"title":"International",
-							"payload":"International"
+							"payload":"INTERNATIONAL"
 							}    
 						    ]
 						}
