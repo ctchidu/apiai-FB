@@ -5,22 +5,6 @@ var config = require('../config.js').getConfig();
 
 
 
-
-function getFare(locationcountry,travelclass,frequentfly){
-	var json ="";
-	parseXlsx('BAG_FARE_DATA.xlsx', function(err, data) {			
-		var jsonData = JSON.parse(JSON.stringify(convertToJSON(data)));
-		for(i = 0; i < jsonData.length; i++){
-	 if((jsonData[i].COUNTRY == locationcountry) && (jsonData[i].ALTITUDE == frequentfly) && (jsonData[i].CLASS == travelclass)){	
-		     var json = formatApiaiResponse(speech = jsonData[i].FARE,displayText = jsonData[i].FARE)
-			 }	 
-		  }		
-		});
-	console.log(json);
-	return json;
-	
-};
-
 function formatApiaiResponse(speech, displayText) {
     return {
         "speech": speech,
@@ -77,12 +61,18 @@ var fulfillmentRequest = function(request, response) {
                 var travelclass = travelclass.toUpperCase();
 		var frequentfly = frequentfly.toUpperCase();	
 			
-		var str = getFare(locationcountry,travelclass,frequentfly);
-		console.log(str);	
-		var json = formatApiaiResponse(speech = str,displayText = str);
+		parseXlsx('BAG_FARE_DATA.xlsx', function(err, data) {			
+		var jsonData = JSON.parse(JSON.stringify(convertToJSON(data)));
+		for(i = 0; i < jsonData.length; i++){
+	 	if((jsonData[i].COUNTRY == locationcountry) && (jsonData[i].ALTITUDE == frequentfly) && (jsonData[i].CLASS == travelclass)){	
+		     var json = formatApiaiResponse(speech = jsonData[i].FARE,displayText = jsonData[i].FARE);
+			response.json(json);
+                	break;	
+			 }	 
+		  }		
+		});
 		}
-		response.json(json);
-                break;	
+	
                 
          case 'all.items':
 
