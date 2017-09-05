@@ -52,9 +52,7 @@ var fulfillmentRequest = function(request, response) {
 		var locationcountry = body.result.parameters.locationcountry;
                 var travelclass = body.result.parameters.travelclass;
 		var frequentfly = body.result.parameters.frequentfly;
-		var json =''; 
-			
-		if(frequentfly){
+
 		var locationcountry = locationcountry.toUpperCase();
                 var travelclass = travelclass.toUpperCase();
 		var frequentfly = frequentfly.toUpperCase();
@@ -64,14 +62,27 @@ var fulfillmentRequest = function(request, response) {
 		console.log(travelclass);	
 		console.log(frequentfly);	
 			
-			
-                        var str = fs.readFileSync('./businesscanada.txt', 'utf8');
-                        var json = formatApiaiResponse(speech = str,displayText = str)	
-                
-			
-		}	
-             	response.json(json);
-             	break;
+		parseXlsx('BAG_FARE_DATA.xlsx', function(err, data) {
+		var a = true;			
+		var jsonData = JSON.parse(JSON.stringify(convertToJSON(data)));
+		for(i = 0; i < jsonData.length; i++){
+	 if((jsonData[i].COUNTRY == locationcountry) && (jsonData[i].ALTITUDE == frequentfly) && (jsonData[i].CLASS == travelclass)){
+	 var a = false;
+		console.log(jsonData[i].COUNTRY);
+		console.log(jsonData[i].ALTITUDE);
+		console.log(jsonData[i].CLASS);	
+		 console.log(jsonData[i].FARE);	
+		 var json = formatApiaiResponse(speech = jsonData[i].FARE,displayText = jsonData[i].FARE)
+			 response.json(json);
+			 break;
+			 }	 
+		  }		
+		if(a){
+		      var str = fs.readFileSync('./fallback.txt', 'utf8');
+		      var json = formatApiaiResponse(speech = str,displayText = str)  
+		     response.json(json);
+  		 }
+		});
   
                 
          case 'all.items':
