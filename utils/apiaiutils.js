@@ -52,85 +52,35 @@ var fulfillmentRequest = function(request, response) {
 		var locationcountry = body.result.parameters.locationcountry;
                 var travelclass = body.result.parameters.travelclass;
 		var frequentfly = body.result.parameters.frequentfly;
-			console.log(locationcountry);
+		   
+		if(frequentfly){
+		var locationcountry = locationcountry.toUpperCase();
+                var travelclass = travelclass.toUpperCase();
+		var frequentfly = frequentfly.toUpperCase();
 			
-                
-		if(frequentfly){		
 			
-                if(travelclass =='economy') {
-                   if(locationcountry == 'canada'){
-                        var str = fs.readFileSync('./canada.txt', 'utf8');
-                        var json = formatApiaiResponse(speech = str,displayText = str)
-                }
-                 if(locationcountry == 'US'){
-                        var str = fs.readFileSync('./us.txt', 'utf8');
-                        var json = formatApiaiResponse(speech = str,displayText = str)
-                }
-		if(locationcountry == 'U.S'){
-                        var str = fs.readFileSync('./us.txt', 'utf8');
-                        var json = formatApiaiResponse(speech = str,displayText = str)
-                }	
-                 if(locationcountry == 'SUN'){
-                        var str = fs.readFileSync('./sun.txt', 'utf8');
-                        var json = formatApiaiResponse(speech = str,displayText = str)
-                }
-                 if(locationcountry == 'international'){
-                        var str = fs.readFileSync('./international.txt', 'utf8');
-                        var json = formatApiaiResponse(speech = str,displayText = str)
-                }
-                       }
+		console.log(locationcountry);
+		console.log(travelclass);	
+		console.log(frequentfly);	
+			
+			
+			parseXlsx('BAG_FARE_DATA.xlsx', function(err, data) {	
+			var jsonData = JSON.parse(JSON.stringify(convertToJSON(data)));
+			for(i = 0; i < jsonData.length; i++){
+     
+		 if((jsonData[i].COUNTRY == locationcountry) && (jsonData[i].ALTITUDE == frequentfly) && (jsonData[i].CLASS == travelclass)){
+
+			 var json = formatApiaiResponse(speech = jsonData[i].FARE,displayText = jsonData[i].FARE)
+			 response.json(json);
+             	 	  break;
+				 }	 
+			  }		
+
+		});	
                 
-                
-                if(travelclass =='premium economy') {
-                   if(locationcountry == 'canada'){
-                        var str = fs.readFileSync('./premiumcanada.txt', 'utf8');
-                        var json = formatApiaiResponse(speech = str,displayText = str)
-                }
-                 if(locationcountry == 'US'){
-                        var str = fs.readFileSync('./premiumus.txt', 'utf8');
-                        var json = formatApiaiResponse(speech = str,displayText = str)
-                }
-		                 if(locationcountry == 'U.S'){
-                        var str = fs.readFileSync('./premiumus.txt', 'utf8');
-                        var json = formatApiaiResponse(speech = str,displayText = str)
-                }	
-                 if(locationcountry == 'SUN'){
-                        var str = fs.readFileSync('./premiumsun.txt', 'utf8');
-                        var json = formatApiaiResponse(speech = str,displayText = str)
-                }
-                 if(locationcountry == 'international'){
-                        var str = fs.readFileSync('./premiuminternational.txt', 'utf8');
-                        var json = formatApiaiResponse(speech = str,displayText = str)
-                }
-                       }
-                
-                
-                if(travelclass =='business') {
-                   if(locationcountry == 'canada'){
-                        var str = fs.readFileSync('./businesscanada.txt', 'utf8');
-                        var json = formatApiaiResponse(speech = str,displayText = str)
-                }
-                 if(locationcountry == 'US'){
-                        var str = fs.readFileSync('./businessus.txt', 'utf8');
-                        var json = formatApiaiResponse(speech = str,displayText = str)
-                }
-		                 if(locationcountry == 'U.S'){
-                        var str = fs.readFileSync('./businessus.txt', 'utf8');
-                        var json = formatApiaiResponse(speech = str,displayText = str)
-                }	
-                 if(locationcountry == 'SUN'){
-                        var str = fs.readFileSync('./businesssun.txt', 'utf8');
-                        var json = formatApiaiResponse(speech = str,displayText = str)
-                }
-                 if(locationcountry == 'international'){
-                        var str = fs.readFileSync('./businessinternational.txt', 'utf8');
-                        var json = formatApiaiResponse(speech = str,displayText = str)
-                }
-                       }
 			
 		}	
-             response.json(json);		
-             break;
+             
   
                 
          case 'all.items':
