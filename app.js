@@ -9,6 +9,8 @@ var config = require('./config.js').getConfig();
 // Import API.AI and identify with token
 var apiai = require('apiai');
 var api = apiai(config.apiaitoken);
+fs = require('fs')
+var parseXlsx = require('excel')
 
 // Import our own webhook functions
 var apiaiUtils = require('./utils/apiaiutils.js');
@@ -28,10 +30,33 @@ function sendTextMessage(recipientId, messageText) {
     }
   };
 
-  callSendAPI(messageData);
+  sendMessage(messageData);
 }
 
+// Send a message via the Facebook Graph API
+var sendMessage = function(messageData) {
+    request({
+        uri: "https://graph.facebook.com/v2.6/me/messages",
+        qs: { access_token: config.facebook.pageAccessToken },
+        method: "POST",
+        json: messageData
+    }, function(error, response, body) {
+        if (!error && response.statusCode == 200) {
+            var recipientId = body.recipient_id;
+            var messageId = body.message_id;
 
+            if (messageId) {
+                console.log("Successfully sent message with id %s to recipient %s",
+                messageId, recipientId);
+            } else {
+                console.log("Successfully called Send API for recipient %s",
+                recipientId);
+            }
+        } else {
+            console.error("Failed calling Send API", response.statusCode, response.statusMessage, body.error);
+        }
+    });
+}
 
 
 // Define port
@@ -74,7 +99,11 @@ app.post('/facebook', json_body_parser, function(req, response) {
 			    }else if(messagingEvent.postback.payload === "baggage status"){
 				    facebookBagStatus.facebookBagStatus(messagingEvent);
 				     
-			    }else {
+			    }else if(messagingEvent.postback.payload === "sports"){
+				    var str = fs.readFileSync('./sportsallitems.txt', 'utf8');
+				    sendTextMessage(,str);
+				     
+			    }else{
                                 facebookUtils.handleFacebookTextMessage(messagingEvent);
                             }
                         }
