@@ -77,13 +77,16 @@ var fulfillmentRequest = function(request, response) {
 			 }	 
 		  }		
 		});
-		}
+		
 			sleep(5000, function() {
    				// executes after one second, and blocks the thread
 			return response.json(json);
-                	break;
-				});
+                	
+				});	
+			
+		}
 
+break;
                 
          case 'all.items':
 
