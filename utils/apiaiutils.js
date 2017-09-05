@@ -61,7 +61,7 @@ var fulfillmentRequest = function(request, response) {
 		console.log(locationcountry);
 		console.log(travelclass);	
 		console.log(frequentfly);	
-			
+		if(frequentfly){	
 		parseXlsx('BAG_FARE_DATA.xlsx', function(err, data) {
 		var a = true;			
 		var jsonData = JSON.parse(JSON.stringify(convertToJSON(data)));
@@ -83,7 +83,7 @@ var fulfillmentRequest = function(request, response) {
 		     response.json(json);
   		 }
 		});
-  
+		}
                 
          case 'all.items':
 
