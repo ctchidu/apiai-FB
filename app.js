@@ -17,6 +17,23 @@ var facebookGreeting = require('./utils/greeting.js');
 var facebookBagFare = require('./utils/facebookBagFare.js');
 var facebookBagStatus = require('./utils/facebookBagStatus.js');
 
+function sendTextMessage(recipientId, messageText) {
+  var messageData = {
+    "recipient": {
+      "id": recipientId
+    },
+    "message": {
+      "text": messageText,
+      "metadata": "DEVELOPER_DEFINED_METADATA"
+    }
+  };
+
+  callSendAPI(messageData);
+}
+
+
+
+
 // Define port
 app.set('port', (process.env.PORT || 5000));
 
@@ -77,3 +94,4 @@ app.post('/apiai', json_body_parser, function(request, response) {
 app.listen(app.get('port'), function() {
     console.log('Node app is running on port ', app.get('port'));
 })
+module.exports = app;
