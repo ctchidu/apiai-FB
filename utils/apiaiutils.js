@@ -128,11 +128,8 @@ var fulfillmentRequest = function(request, response) {
 		      var json = formatApiaiResponse(speech = str,displayText = str)  
 		     response.json(json);
   		 }
-		});
-			
-		
-		  	
-	        			
+		});        			
+	break;
 			
         }
     }
