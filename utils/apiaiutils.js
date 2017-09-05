@@ -71,10 +71,12 @@ var fulfillmentRequest = function(request, response) {
                 var travelclass = body.result.parameters.travelclass;
 		var frequentfly = body.result.parameters.frequentfly;
 
+
+		if(frequentfly){
 		var locationcountry = locationcountry.toUpperCase();
                 var travelclass = travelclass.toUpperCase();
-		var frequentfly = frequentfly.toUpperCase();
-		if(frequentfly){	
+		var frequentfly = frequentfly.toUpperCase();	
+			
 		var str = getFare(locationcountry,travelclass,frequentfly);
 		console.log(str);	
 		var json = formatApiaiResponse(speech = str,displayText = str);
