@@ -65,7 +65,9 @@ var fulfillmentRequest = function(request, response) {
 		var jsonData = JSON.parse(JSON.stringify(convertToJSON(data)));
 		for(i = 0; i < jsonData.length; i++){
 	 	if((jsonData[i].COUNTRY == locationcountry) && (jsonData[i].ALTITUDE == frequentfly) && (jsonData[i].CLASS == travelclass)){	
-		     var json = formatApiaiResponse(speech = jsonData[i].FARE,displayText = jsonData[i].FARE);
+		     console.log(jsonData[i].FARE);
+			var json = formatApiaiResponse(speech = jsonData[i].FARE,displayText = jsonData[i].FARE);
+			console.log(json);
 			return response.json(json);
                 	break;	
 			 }	 
