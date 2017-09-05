@@ -35,7 +35,13 @@ function convertToJSON(array) {
   return jsonData;
 };
 
-
+function sleep(time, callback) {
+    var stop = new Date().getTime();
+    while(new Date().getTime() < stop + time) {
+        ;
+    }
+    callback();
+}
 
 
 var fulfillmentRequest = function(request, response) {
@@ -72,6 +78,9 @@ var fulfillmentRequest = function(request, response) {
 		  }		
 		});
 		}
+			sleep(5000, function() {
+   				// executes after one second, and blocks the thread
+				});
 			return response.json(json);
                 	break;
                 
