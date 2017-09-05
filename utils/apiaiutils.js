@@ -71,7 +71,7 @@ var fulfillmentRequest = function(request, response) {
 			console.log(jsonData[i].ALTITUDE);
 			console.log(jsonData[i].CLASS);	
 		 if((jsonData[i].COUNTRY == locationcountry)){
-
+			console.log(jsonData[i].FARE);	
 			 var json = formatApiaiResponse(speech = jsonData[i].FARE,displayText = jsonData[i].FARE)
 			 response.json(json);
              	 	  break;
