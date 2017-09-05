@@ -32,7 +32,7 @@ var handleFacebookTextMessage = function(event) {
 						    "quick_replies":[
 							{"content_type":"text",
 							"title":"Canada",
-							"payload":"canada"
+							"payload":"CANADA"
 							},
 							{"content_type":"text",
 							"title":"U.S",
@@ -44,7 +44,7 @@ var handleFacebookTextMessage = function(event) {
 							},
 							{"content_type":"text",
 							"title":"International",
-							"payload":"International"
+							"payload":"INTERNATIONAL"
 							}    
 						    ]
 						}
@@ -61,15 +61,15 @@ var handleFacebookTextMessage = function(event) {
 						    "quick_replies":[
 							{"content_type":"text",
 							"title":"Economy",
-							"payload":"economy"
+							"payload":"ECONOMY"
 							},
 							{"content_type":"text",
 							"title":"Premium economy",
-							"payload":"premium economy"
+							"payload":"PREMIUM ECONOMY"
 							},
 							{"content_type":"text",
 							"title":"Business",
-							"payload":"business"
+							"payload":"BUSINESS"
 							}    
 						    ]
 						}
@@ -107,8 +107,8 @@ var handleFacebookTextMessage = function(event) {
 							"payload":"GOLD"
 							},
 							{"content_type":"text",
-							"title":"SILVER",
-							"payload":"STAR ALLIANCE SILVER"
+							"title":"STAR ALLIANCE SILVER",
+							"payload":"SILVER"
 							}             
 						    ]
 						}
