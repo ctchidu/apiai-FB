@@ -156,7 +156,6 @@ var handleFacebookTextMessage = function(event) {
 		
 		else{
 		
-console.log('i am here');
             replyMessage(sender_id, response_bot.result.fulfillment);
 		}	
         });
@@ -200,8 +199,6 @@ var sendMessage = function(messageData) {
 // Responds a message based on text and id of the receiver
 var replyMessage = function(recipientId, fulfillment) {
     var speech = fulfillment.speech;
-	console.log('speech here');
-	console.log(speech);
     if ((speech != undefined) & (speech != "")) {
         const messageData = {
             recipient: {
@@ -212,8 +209,7 @@ var replyMessage = function(recipientId, fulfillment) {
             }
         }
         sendMessage(messageData);
-    } else {
-	 console.log('empty here');   
+    } else {   
         console.log('Facebook message is either empty or undefined.');
     }
 }
