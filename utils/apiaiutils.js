@@ -81,6 +81,8 @@ var fulfillmentRequest = function(request, response) {
 			sleep(5000, function() {
    				// executes after one second, and blocks the thread
 				});
+			console.log('i am befor going');
+			console.log(json);
 			return response.json(json);
                 	break;
                 
