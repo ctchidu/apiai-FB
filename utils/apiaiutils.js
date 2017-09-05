@@ -3,6 +3,24 @@ fs = require('fs')
 var parseXlsx = require('excel')
 var config = require('../config.js').getConfig();
 
+
+
+
+function getFare(locationcountry,travelclass,frequentfly){
+	var json ="";
+	parseXlsx('BAG_FARE_DATA.xlsx', function(err, data) {			
+		var jsonData = JSON.parse(JSON.stringify(convertToJSON(data)));
+		for(i = 0; i < jsonData.length; i++){
+	 if((jsonData[i].COUNTRY == locationcountry) && (jsonData[i].ALTITUDE == frequentfly) && (jsonData[i].CLASS == travelclass)){	
+		     var json = formatApiaiResponse(speech = jsonData[i].FARE,displayText = jsonData[i].FARE)
+			 }	 
+		  }		
+		});
+	console.log(json);
+	return json;
+	
+};
+
 function formatApiaiResponse(speech, displayText) {
     return {
         "speech": speech,
@@ -57,33 +75,11 @@ var fulfillmentRequest = function(request, response) {
                 var travelclass = travelclass.toUpperCase();
 		var frequentfly = frequentfly.toUpperCase();
 			
-			
-		console.log(locationcountry);
-		console.log(travelclass);	
-		console.log(frequentfly);	
-		if(frequentfly){	
-		parseXlsx('BAG_FARE_DATA.xlsx', function(err, data) {
-		var a = true;			
-		var jsonData = JSON.parse(JSON.stringify(convertToJSON(data)));
-		for(i = 0; i < jsonData.length; i++){
-	 if((jsonData[i].COUNTRY == locationcountry) && (jsonData[i].ALTITUDE == frequentfly) && (jsonData[i].CLASS == travelclass)){
-	 var a = false;
-		console.log(jsonData[i].COUNTRY);
-		console.log(jsonData[i].ALTITUDE);
-		console.log(jsonData[i].CLASS);	
-		 console.log(jsonData[i].FARE);	
-		 var json = formatApiaiResponse(speech = jsonData[i].FARE,displayText = jsonData[i].FARE)
-			 response.json(json);
-			 break;
-			 }	 
-		  }		
-		if(a){
-		      var str = fs.readFileSync('./fallback.txt', 'utf8');
-		      var json = formatApiaiResponse(speech = str,displayText = str)  
-		     response.json(json);
-  		 }
-		});
-		}
+		var str = getFare(locationcountry,travelclass,frequentfly);
+		console.log(str);	
+		var json = formatApiaiResponse(speech = str,displayText = str);
+		response.json(json);
+                break;	
                 
          case 'all.items':
 
