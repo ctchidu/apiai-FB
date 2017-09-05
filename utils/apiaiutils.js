@@ -54,7 +54,7 @@ var fulfillmentRequest = function(request, response) {
 		var locationcountry = body.result.parameters.locationcountry;
                 var travelclass = body.result.parameters.travelclass;
 		var frequentfly = body.result.parameters.frequentfly;
-
+		var json ='';
 
 		if(frequentfly){
 		var locationcountry = locationcountry.toUpperCase();
@@ -67,14 +67,13 @@ var fulfillmentRequest = function(request, response) {
 	 	if((jsonData[i].COUNTRY == locationcountry) && (jsonData[i].ALTITUDE == frequentfly) && (jsonData[i].CLASS == travelclass)){	
 		     console.log(jsonData[i].FARE);
 			var json = formatApiaiResponse(speech = jsonData[i].FARE,displayText = jsonData[i].FARE);
-			console.log(json);
-			return response.json(json);
-                	break;	
+			console.log(json);	
 			 }	 
 		  }		
 		});
 		}
-	
+			return response.json(json);
+                	break;
                 
          case 'all.items':
 
