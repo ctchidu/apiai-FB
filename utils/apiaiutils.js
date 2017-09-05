@@ -74,14 +74,14 @@ var fulfillmentRequest = function(request, response) {
 		     console.log(jsonData[i].FARE);
 			var json = formatApiaiResponse(speech = jsonData[i].FARE,displayText = jsonData[i].FARE);
 			console.log(json);
-			return response.json(json);
-                	break;
 			 }	 
 		  }		
 		});
 		}
 			sleep(5000, function() {
    				// executes after one second, and blocks the thread
+			return response.json(json);
+                	break;
 				});
 
                 
