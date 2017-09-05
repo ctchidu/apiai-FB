@@ -22,7 +22,7 @@ var facebookGreeting = function(event) {
             "title": "Baggage Bot",
             "subtitle": "Welcome to Baggage Bot!",
             "item_url": "https://www.aircanada.com/ca/en/aco/home.html",               
-            "image_url": "https://raw.githubusercontent.com/ctchidu/apiai-FB/master/AC.jpg",
+            "image_url": "https://raw.githubusercontent.com/ctchidu/apiai-FB/master/AC.png",
             "buttons": [
             {
               "type": "postback",
