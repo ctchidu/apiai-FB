@@ -35,13 +35,7 @@ function convertToJSON(array) {
   return jsonData;
 };
 
-function sleep(time, callback) {
-    var stop = new Date().getTime();
-    while(new Date().getTime() < stop + time) {
-        ;
-    }
-    callback();
-}
+
 
 
 var fulfillmentRequest = function(request, response) {
@@ -60,14 +54,38 @@ var fulfillmentRequest = function(request, response) {
 		var locationcountry = body.result.parameters.locationcountry;
                 var travelclass = body.result.parameters.travelclass;
 		var frequentfly = body.result.parameters.frequentfly;
-		var json ='';
+		var str;
 
 		if(frequentfly){
 		var locationcountry = locationcountry.toUpperCase();
                 var travelclass = travelclass.toUpperCase();
-		var frequentfly = frequentfly.toUpperCase();				
+		var frequentfly = frequentfly.toUpperCase();
+			
+		function counter(callback) {
+  
+	  	parseXlsx('BAG_FARE_DATA.xlsx', function(err, data) {			
+		var jsonData = JSON.parse(JSON.stringify(convertToJSON(data)));
+		for(i = 0; i < jsonData.length; i++){
+		 if((jsonData[i].COUNTRY == locationcountry) && (jsonData[i].ALTITUDE == frequentfly) && (jsonData[i].CLASS == travelclass)){	
+			      str = formatApiaiResponse(speech = jsonData[i].FARE,displayText = jsonData[i].FARE);
+			 			 
+			 }				 
+		  }
+			callback();			  
+		});
+  
+	}
+
+		function logMyNumber() {
+		  response.json(str);
 		}
-		response.json(json);
+
+	counter(logMyNumber);	
+									
+			
+			
+		}
+		
 		break;
                 
          case 'all.items':
