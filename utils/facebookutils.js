@@ -92,22 +92,22 @@ var handleFacebookTextMessage = function(event) {
 							},
 							{"content_type":"text",
 							"title":"SUPER ELITE 100K",
-							"payload":"SUPER"
+							"payload":"100K"
 							},
 							{"content_type":"text",
 							"title":"ELITE 75K,50K,35K",
-							"payload":"ELITE"
+							"payload":"75K50K35K"
 							},
 							{"content_type":"text",
 							"title":"PRESTIGE 25K",
-							"payload":"PRESTIGE"
+							"payload":"25K"
 							},
 							{"content_type":"text",
 							"title":"STAR ALLIANCE GOLD",
-							"payload":"STAR ALLIANCE GOLD"
+							"payload":"GOLD"
 							},
 							{"content_type":"text",
-							"title":"STAR ALLIANCE SILVER",
+							"title":"SILVER",
 							"payload":"STAR ALLIANCE SILVER"
 							}             
 						    ]
