@@ -9,7 +9,7 @@ var facebookGreeting = function(event) {
 	var sender_id = event.sender.id;
   var messageData = {
     recipient: {
-      id: recipientId
+      id: sender_id
     },
     message: 
     {
