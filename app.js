@@ -104,6 +104,14 @@ app.post('/facebook', json_body_parser, function(req, response) {
 				    var str = fs.readFileSync('./sportsallitems.txt', 'utf8');
 				    sendTextMessage(sender_id,str);
 				     
+			    }else if(messagingEvent.postback.payload === "music"){
+				    var str = fs.readFileSync('./music.txt', 'utf8');
+				    sendTextMessage(sender_id,str);
+				     
+			    }else if(messagingEvent.postback.payload === "hunting"){
+				    var str = fs.readFileSync('./hunting.txt', 'utf8');
+				    sendTextMessage(sender_id,str);
+				     
 			    }else{
                                 facebookUtils.handleFacebookTextMessage(messagingEvent);
                             }
