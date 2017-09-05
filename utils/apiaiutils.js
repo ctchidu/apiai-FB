@@ -65,28 +65,10 @@ var fulfillmentRequest = function(request, response) {
 		if(frequentfly){
 		var locationcountry = locationcountry.toUpperCase();
                 var travelclass = travelclass.toUpperCase();
-		var frequentfly = frequentfly.toUpperCase();	
-			
-		parseXlsx('BAG_FARE_DATA.xlsx', function(err, data) {			
-		var jsonData = JSON.parse(JSON.stringify(convertToJSON(data)));
-		for(i = 0; i < jsonData.length; i++){
-	 	if((jsonData[i].COUNTRY == locationcountry) && (jsonData[i].ALTITUDE == frequentfly) && (jsonData[i].CLASS == travelclass)){	
-		     console.log(jsonData[i].FARE);
-			var json = formatApiaiResponse(speech = jsonData[i].FARE,displayText = jsonData[i].FARE);
-			console.log(json);
-			 }	 
-		  }		
-		});
-		
-			sleep(5000, function() {
-   				// executes after one second, and blocks the thread
-			return response.json(json);
-                	
-				});	
-			
+		var frequentfly = frequentfly.toUpperCase();				
 		}
-
-break;
+		response.json(json);
+		break;
                 
          case 'all.items':
 
