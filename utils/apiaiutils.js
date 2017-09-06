@@ -36,7 +36,8 @@ function convertToJSON(array) {
 };
 
 	  	parseXlsx('BAG_FARE_DATA.xlsx', function(err, data) {			
-		 jsonData = JSON.parse(JSON.stringify(convertToJSON(data)));		  
+		 jsonData = JSON.parse(JSON.stringify(convertToJSON(data)));
+		console.log('getting data');	
 		});
 
 
