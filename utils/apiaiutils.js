@@ -63,6 +63,9 @@ var fulfillmentRequest = function(request, response) {
 		var locationcountry = locationcountry.toUpperCase();
                 var travelclass = travelclass.toUpperCase();
 		var frequentfly = frequentfly.toUpperCase();
+		console.log(locationcountry);	
+		console.log(travelclass);
+		console.log(frequentfly);
 			
 		for(i = 0; i < jsonData.length; i++){
 		 if((jsonData[i].COUNTRY == locationcountry) && (jsonData[i].ALTITUDE == frequentfly) && (jsonData[i].CLASS == travelclass)){	
