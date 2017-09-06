@@ -74,7 +74,7 @@ var fulfillmentRequest = function(request, response) {
 			
 			
 		}
-		
+		response.json(str);
 		break;
                 
          case 'all.items':
