@@ -63,6 +63,9 @@ var fulfillmentRequest = function(request, response) {
 		var locationcountry = locationcountry.toUpperCase();
                 var travelclass = travelclass.toUpperCase();
 		var frequentfly = frequentfly.toUpperCase();
+		if(locationcountry === 'U.S'){
+			locationcountry='US';
+		   }
 		console.log(locationcountry);	
 		console.log(travelclass);
 		console.log(frequentfly);
