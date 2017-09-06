@@ -1,7 +1,0 @@
-Economy class fare for travelling between Canada and the U.S.
-Tango or Flex fares:
-        1st bag: $25.00 - $26.25
-        2nd bag: $35.00 - $36.75
-
-Latitude fares:
-        2 bags free
