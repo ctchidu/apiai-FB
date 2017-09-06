@@ -2,7 +2,7 @@
 fs = require('fs')
 var parseXlsx = require('excel')
 var config = require('../config.js').getConfig();
-
+var jsonData;
 
 
 function formatApiaiResponse(speech, displayText) {
@@ -35,7 +35,9 @@ function convertToJSON(array) {
   return jsonData;
 };
 
-
+	  	parseXlsx('BAG_FARE_DATA.xlsx', function(err, data) {			
+		 jsonData = JSON.parse(JSON.stringify(convertToJSON(data)));		  
+		});
 
 
 var fulfillmentRequest = function(request, response) {
@@ -61,26 +63,12 @@ var fulfillmentRequest = function(request, response) {
                 var travelclass = travelclass.toUpperCase();
 		var frequentfly = frequentfly.toUpperCase();
 			
-		function counter(callback) {
-  
-	  	parseXlsx('BAG_FARE_DATA.xlsx', function(err, data) {			
-		var jsonData = JSON.parse(JSON.stringify(convertToJSON(data)));
 		for(i = 0; i < jsonData.length; i++){
 		 if((jsonData[i].COUNTRY == locationcountry) && (jsonData[i].ALTITUDE == frequentfly) && (jsonData[i].CLASS == travelclass)){	
 			      str = formatApiaiResponse(speech = jsonData[i].FARE,displayText = jsonData[i].FARE);
-			 			 
+			    response.json(str);	 			 
 			 }				 
 		  }
-			callback();			  
-		});
-  
-	}
-
-		function logMyNumber() {
-		  response.json(str);
-		}
-
-	counter(logMyNumber);	
 									
 			
 			
