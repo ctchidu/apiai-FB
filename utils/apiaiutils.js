@@ -43,15 +43,15 @@ function convertToJSON(array) {
 	 statusData =[
 				{
 					"bagtag_id": "1234567890",
-					"status" : "Your bag is reaching Miami @6PM today and will be delivered at your hotel room by 9 o'clock"
+					"status" : "Your bag is reaching Montreal @6PM today and will be delivered at your hotel room by 9 o'clock"
 				},
 				{
 					"bagtag_id" : "3651201478",
-					"status" : "Your bag will reach NewYork @4PM today and will be delivered to you by 6PM"
+					"status" : "Tracing continues,Please check back later"
 				},
 				{
 					"bagtag_id" : "2104796325",
-					"status" : "Your bag will reach DFW @11AM today and will be delivered to you by 7PM"
+					"status" : "Forwarding to delivery airport"
 				}
 			];
 
