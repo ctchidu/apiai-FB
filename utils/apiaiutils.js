@@ -2,7 +2,7 @@
 fs = require('fs')
 var parseXlsx = require('excel')
 var config = require('../config.js').getConfig();
-var jsonData;
+var jsonData,statusData;
 
 
 function formatApiaiResponse(speech, displayText) {
@@ -39,6 +39,22 @@ function convertToJSON(array) {
 		 jsonData = JSON.parse(JSON.stringify(convertToJSON(data)));
 		console.log('getting data');	
 		});
+
+	 statusData =[
+				{
+					"bagtag_id": "1234567890",
+					"status" : "Your bag is reaching Miami @6PM today and will be delivered at your hotel room by 9 o'clock"
+				},
+				{
+					"bagtag_id" : "3651201478",
+					"status" : "Your bag will reach NewYork @4PM today and will be delivered to you by 6PM"
+				},
+				{
+					"bagtag_id" : "2104796325",
+					"status" : "Your bag will reach DFW @11AM today and will be delivered to you by 7PM"
+				}
+			];
+
 
 
 var fulfillmentRequest = function(request, response) {
@@ -147,33 +163,18 @@ var fulfillmentRequest = function(request, response) {
 		case 'status':
 			
 			var snumber = body.result.parameters.snumber;
+			var str;
+						
+			for(i = 0; i < statusData.length; i++){
 			
-			var jsonData =[
-						{
-							"bagtag_id": "1234567890",
-							"status" : "Your bag is reaching Miami @6PM today and will be delivered at your hotel room by 9 o'clock"
-						},
-						{
-							"bagtag_id" : "3651201478",
-							"status" : "Your bag will reach NewYork @4PM today and will be delivered to you by 6PM"
-						},
-						{
-							"bagtag_id" : "2104796325",
-							"status" : "Your bag will reach DFW @11AM today and will be delivered to you by 7PM"
-						}
-					];
-			
-			
-			for(i = 0; i < jsonData.length; i++){
-			
-				if(jsonData[i].bagtag_id == snumber){
-					var json = formatApiaiResponse(speech = jsonData[i].status,displayText = jsonData[i].status)
-					response.json(json);
+				if(statusData[i].bagtag_id == snumber){
+					 str = formatApiaiResponse(speech = statusData[i].status,displayText = statusData[i].status)
+					
 				}
 				
 			}
 			
-
+			response.json(str);
 			break;
 			
 			
