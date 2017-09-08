@@ -143,6 +143,16 @@ var fulfillmentRequest = function(request, response) {
 		});        			
 	break;
 			
+			
+		case 'status':
+			
+			var str ="your bag is delayed in montreal";
+			var json = formatApiaiResponse(speech = str,displayText = str)
+			response.json(json);
+			break;
+			
+			
+			
         }
     }
 }
