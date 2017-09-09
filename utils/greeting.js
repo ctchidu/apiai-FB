@@ -21,7 +21,7 @@ var facebookGreeting = function(event) {
           {
             "title": "Baggage Bot",
             "subtitle": "Welcome to Baggage Bot!",              
-            "image_url": "https://raw.githubusercontent.com/ctchidu/apiai-FB/master/AC.png",
+            "image_url": "https://raw.githubusercontent.com/ctchidu/apiai-FB/master/logo.png",
             "buttons": [
             {
               "type": "postback",
