@@ -190,7 +190,7 @@ var fulfillmentRequest = function(request, response) {
         "items": [
           {
             "simpleResponse": {
-              "textToSpeech": str
+              "textToSpeech": "Baggage status"
             }
           },
           {
