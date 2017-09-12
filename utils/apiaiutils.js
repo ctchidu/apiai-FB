@@ -167,15 +167,47 @@ var fulfillmentRequest = function(request, response) {
 			
 			var snumber = body.result.parameters.snumber;
 			var str;
-						
-			for(i = 0; i < statusData.length; i++){
-			
-				if(statusData[i].bagtag_id == snumber){
-					 str = formatApiaiResponse(speech = statusData[i].status,displayText = statusData[i].status)
-					
-				}
-				
-			}
+			str = {
+  "speech": "This is a API.AI default speech response",
+  "displayText": "This is a API.AI default display text response",
+  "data": {
+    "google": {
+      "expectUserResponse": true,
+      "isSsml": false,
+      "noInputPrompts": [],
+      "richResponse": {
+        "items": [
+          {
+            "simpleResponse": {
+              "textToSpeech": "This is a simple speech response for Actions on Google.",
+              "displayText": "This is a simple display text response for Action on Google."
+            }
+          },
+          {
+            "basicCard": {
+              "title": "Title: this is a title",
+              "subtitle": "This is a subtitle",
+              "formattedText": "This is a basic card.  Text in a basic card can include \"quotes\" and most other unicode characters including emoji 📱.  Basic cards also support some markdown formatting like *emphasis* or _italics_, **strong** or __bold__, and ***bold itallic*** or ___strong emphasis___ as well as other things like line  \nbreaks",
+              "image": {
+                "url": "https://developers.google.com/actions/images/badges/XPM_BADGING_GoogleAssistant_VER.png",
+                "accessibilityText": "Image alternate text"
+              },
+              "buttons": [
+                {
+                  "title": "This is a button",
+                  "openUrlAction": {
+                    "url": "https://assistant.google.com/"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+	}
+  }
+};			
+
 			
 			response.json(str);
 			break;
