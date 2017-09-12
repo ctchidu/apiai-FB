@@ -22,7 +22,7 @@ var handleFacebookTextMessage = function(event) {
             var text = response_bot.result.fulfillment.speech;
             var action = response_bot.result.action;
 
-		        if((text == 'May I know which country you are travelling to ? Canada OR US OR Mexico/Caribbean OR International') && (action == 'baggagefare')){
+		        if((text == 'May I know which country you are travelling to ? Canada or US or Mexico/Caribbean or International') && (action == 'baggagefare')){
 			let messageData = {
 					  "recipient":{
 						"id":sender_id
@@ -50,7 +50,7 @@ var handleFacebookTextMessage = function(event) {
 						}
 				}	
                 sendMessage(messageData);                
-           } else if((text == 'May I know in which class you are travelling ? Economy OR Premium Economy OR Business') && (action == 'baggagefare')){
+           } else if((text == 'May I know in which class you are travelling ? Economy or Premium Economy or Business') && (action == 'baggagefare')){
 		   
 		   			let messageData = {
 					  "recipient":{
@@ -77,7 +77,7 @@ var handleFacebookTextMessage = function(event) {
 		   
 		   sendMessage(messageData);
 		   
-		   }else if((text == 'What is your AIR CANADA ALTITUDE STATUS? NONE OR SUPER ELITE 100K OR ELITE 75K,ELITE 50K,ELITE 35K OR PRESTIGE 25K OR STAR ALLIANCE GOLD OR STAR ALLIANCE SILVER') && (action == 'baggagefare')){
+		   }else if((text == 'What is your Air Canada altitude status? NONE or SUPER ELITE 100K or ELITE 75K,ELITE 50K,ELITE 35K or PRESTIGE 25K or STAR ALLIANCE GOLD or STAR ALLIANCE SILVER') && (action == 'baggagefare')){
 		   
 		   			let messageData = {
 					  "recipient":{
