@@ -165,7 +165,7 @@ var fulfillmentRequest = function(request, response) {
 			var snumber = body.result.parameters.snumber;
 			var str;
 						
-str=[ data': {
+str=[ "data": {
   "google": {
     "expect_user_response": true,
     "rich_response": {
