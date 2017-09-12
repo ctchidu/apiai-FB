@@ -166,10 +166,21 @@ var fulfillmentRequest = function(request, response) {
 		case 'status':
 			
 			var snumber = body.result.parameters.snumber;
-			var str;
-			str = {
-  "speech": "This is a API.AI default speech response",
-  "displayText": "This is a API.AI default display text response",
+			var str,finalresult;
+			
+			for(i = 0; i < statusData.length; i++){
+			
+				if(statusData[i].bagtag_id == snumber){
+					 str = formatApiaiResponse(speech = statusData[i].status,displayText = statusData[i].status)
+					
+				}
+				
+			}
+			
+			
+			finalresult = {
+  "speech": str,
+  "displayText": str,
   "data": {
     "google": {
       "expectUserResponse": true,
@@ -179,8 +190,8 @@ var fulfillmentRequest = function(request, response) {
         "items": [
           {
             "simpleResponse": {
-              "textToSpeech": "This is a simple speech response for Actions on Google.",
-              "displayText": "This is a simple display text response for Action on Google."
+              "textToSpeech": str,
+              "displayText": str
             }
           },
           {
@@ -209,7 +220,7 @@ var fulfillmentRequest = function(request, response) {
 };			
 
 			
-			response.json(str);
+			response.json(finalresult);
 			break;
 			
 			
