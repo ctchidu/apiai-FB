@@ -179,7 +179,7 @@ var fulfillmentRequest = function(request, response) {
 			
 			
 			finalresult = {
-  "speech": str,
+  "speech": str
   "displayText": str,
   "data": {
     "google": {
@@ -189,13 +189,25 @@ var fulfillmentRequest = function(request, response) {
       "richResponse": {
         "items": [
           {
+            "simpleResponse": {
+              "textToSpeech": str,
+              "displayText": str
+            }
+          },
+          {
             "basicCard": {
-              "formattedText":str,
+              "title": "Title: this is a title",
+              "subtitle": "This is a subtitle",
+              "formattedText": str,
+              "image": {
+                "url": "https://developers.google.com/actions/images/badges/XPM_BADGING_GoogleAssistant_VER.png",
+                "accessibilityText": "Image alternate text"
+              },
               "buttons": [
                 {
-                  "title": "Check out here for more details",
+                  "title": "This is a button",
                   "openUrlAction": {
-                    "url": "https://www.aircanada.com/ca/en/aco/home/plan/baggage/delayed-damaged-baggage.html"
+                    "url": "https://assistant.google.com/"
                   }
                 }
               ]
@@ -205,7 +217,7 @@ var fulfillmentRequest = function(request, response) {
       }
 	}
   }
-};			
+};
 
 			
 			response.json(finalresult);
