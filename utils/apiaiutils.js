@@ -179,7 +179,7 @@ var fulfillmentRequest = function(request, response) {
 			
 			
 			finalresult = {
-  "speech": str
+  "speech": str,
   "displayText": str,
   "data": {
     "google": {
