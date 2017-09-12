@@ -199,10 +199,7 @@ var fulfillmentRequest = function(request, response) {
               "title": "Title: this is a title",
               "subtitle": "This is a subtitle",
               "formattedText": str,
-              "image": {
-                "url": "https://developers.google.com/actions/images/badges/XPM_BADGING_GoogleAssistant_VER.png",
-                "accessibilityText": "Image alternate text"
-              },
+              "image": {},
               "buttons": [
                 {
                   "title": "This is a button",
