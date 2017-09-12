@@ -190,21 +190,20 @@ var fulfillmentRequest = function(request, response) {
         "items": [
           {
             "simpleResponse": {
-              "textToSpeech": str,
-              "displayText": str
+              "textToSpeech": str
             }
           },
           {
             "basicCard": {
-              "title": "Title: this is a title",
-              "subtitle": "This is a subtitle",
+              "title": "",
+              "subtitle": "",
               "formattedText": str,
               "image": {},
               "buttons": [
                 {
-                  "title": "This is a button",
+                  "title": "Check here for more details",
                   "openUrlAction": {
-                    "url": "https://assistant.google.com/"
+                    "url": "https://www.aircanada.com/ca/en/aco/home/plan/baggage/delayed-damaged-baggage.html"
                   }
                 }
               ]
