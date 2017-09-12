@@ -171,7 +171,7 @@ var fulfillmentRequest = function(request, response) {
 			for(i = 0; i < statusData.length; i++){
 			
 				if(statusData[i].bagtag_id == snumber){
-					 str = formatApiaiResponse(speech = statusData[i].status,displayText = statusData[i].status)
+					 str = statusData[i].status;
 					
 				}
 				
