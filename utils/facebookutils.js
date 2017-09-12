@@ -28,7 +28,7 @@ var handleFacebookTextMessage = function(event) {
 						"id":sender_id
 					  },
 					"message":{
-						"text": "May I know which country you are travelling to ? Canada  or  US  or Mexico/Caribbean  or  International",
+						"text": "May I know which country you are travelling to?",
 						    "quick_replies":[
 							{"content_type":"text",
 							"title":"Canada",
@@ -57,7 +57,7 @@ var handleFacebookTextMessage = function(event) {
 						"id":sender_id
 					  },
 					"message":{
-						"text": "May I know in which class you are travelling ?  Economy   or  Premium Economy  or  Business",
+						"text": "May I know in which class you are travelling?",
 						    "quick_replies":[
 							{"content_type":"text",
 							"title":"Economy",
@@ -84,7 +84,7 @@ var handleFacebookTextMessage = function(event) {
 						"id":sender_id
 					  },
 					"message":{
-						"text": "What is your AIR CANADA ALTITUDE STATUS? NONE or SUPER ELITE 100K or ELITE 75K,ELITE 50K,ELITE 35K or PRESTIGE 25K or STAR ALLIANCE GOLD or STAR ALLIANCE SILVER",
+						"text": "May I know your Air Canada altitude status?",
 						    "quick_replies":[
 							{"content_type":"text",
 							"title":"NONE",
