@@ -189,25 +189,13 @@ var fulfillmentRequest = function(request, response) {
       "richResponse": {
         "items": [
           {
-            "simpleResponse": {
-              "textToSpeech": str,
-              "displayText": str
-            }
-          },
-          {
             "basicCard": {
-              "title": "Title: this is a title",
-              "subtitle": "This is a subtitle",
-              "formattedText": "This is a basic card.  Text in a basic card can include \"quotes\" and most other unicode characters including emoji 📱.  Basic cards also support some markdown formatting like *emphasis* or _italics_, **strong** or __bold__, and ***bold itallic*** or ___strong emphasis___ as well as other things like line  \nbreaks",
-              "image": {
-                "url": "https://developers.google.com/actions/images/badges/XPM_BADGING_GoogleAssistant_VER.png",
-                "accessibilityText": "Image alternate text"
-              },
+              "formattedText":str,
               "buttons": [
                 {
-                  "title": "This is a button",
+                  "title": "Check out here for more details",
                   "openUrlAction": {
-                    "url": "https://assistant.google.com/"
+                    "url": "https://www.aircanada.com/ca/en/aco/home/plan/baggage/delayed-damaged-baggage.html"
                   }
                 }
               ]
