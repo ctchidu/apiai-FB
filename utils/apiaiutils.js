@@ -165,14 +165,46 @@ var fulfillmentRequest = function(request, response) {
 			var snumber = body.result.parameters.snumber;
 			var str;
 						
-			for(i = 0; i < statusData.length; i++){
-			
-				if(statusData[i].bagtag_id == snumber){
-					 str = formatApiaiResponse(speech = statusData[i].status,displayText = statusData[i].status)
-					
-				}
-				
-			}
+str=''data': {
+  "google": {
+    "expect_user_response": true,
+    "rich_response": {
+      "items": [
+        {
+          "simpleResponse": {
+            "textToSpeech": "Welcome to Baggae Bot"
+          }
+        },
+        {
+          "basicCard": {
+            "title": "Welcome to Baggage Bot",
+            "formattedText": "Hello\n  Warm Greetings\n   How can I help you with Baggage related queries ?",
+            "image": {
+              "url": "https://raw.githubusercontent.com/ctchidu/apiai-FB/master/AC_Final.png",
+              "accessibilityText": "Image alternate text"
+            },
+            "buttons": [
+              {
+                "title": "Visit Website",
+                "openUrlAction": {
+                  "url": "https://www.aircanada.com/ca/en/aco/home.html"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "suggestions": [
+        {
+          "title": "Baggage fares"
+        },
+        {
+          "title": "Baggage status"
+        }
+      ]
+    }
+  }
+}';
 			
 			response.json(str);
 			break;
