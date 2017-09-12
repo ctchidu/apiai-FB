@@ -12,7 +12,7 @@ var facebookBagFare = function(event) {
 						"id":sender_id
 					  },
 					"message":{
-						"text": "May I know which country you are travelling to ?",
+						"text": "May I know which country you are travelling to?",
 						    "quick_replies":[
 							{"content_type":"text",
 							"title":"Canada",
