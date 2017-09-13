@@ -178,44 +178,9 @@ var fulfillmentRequest = function(request, response) {
 				}
 				
 			}
+			var finalresult = formatApiaiResponse(speech = str,displayText = str) 
 			
 			
-			finalresult = {
-  "speech": str,
-  "displayText": str,
-  "data": {
-    "google": {
-      "expectUserResponse": true,
-      "isSsml": false,
-      "noInputPrompts": [],
-      "richResponse": {
-        "items": [
-          {
-            "simpleResponse": {
-              "textToSpeech": "Baggage status"
-            }
-          },
-          {
-            "basicCard": {
-              "title": "",
-              "subtitle": "",
-              "formattedText": str,
-              "image": {},
-              "buttons": [
-                {
-                  "title": "Check here for more details",
-                  "openUrlAction": {
-                    "url": "https://www.aircanada.com/ca/en/aco/home/plan/baggage/delayed-damaged-baggage.html"
-                  }
-                }
-              ]
-            }
-          }
-        ]
-      }
-	}
-  }
-};
 
 			}	
 			response.json(finalresult);
