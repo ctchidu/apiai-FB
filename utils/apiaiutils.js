@@ -125,7 +125,7 @@ var fulfillmentRequest = function(request, response) {
 		if(allitems == 'carry on baggage'){
                         var str = fs.readFileSync('./carryon.txt', 'utf8');
                         var json = {
-					  "speech":"This is a simple response for a carousel",
+					  "speech":str,
 					  "data": {
 					    "google":
 					    {
@@ -137,7 +137,7 @@ var fulfillmentRequest = function(request, response) {
 						  {
 						    "simpleResponse":
 						    {
-						      "textToSpeech":str
+						      "textToSpeech":"Carry-on Baggage"
 						    }
 						  }
 						],
@@ -182,7 +182,7 @@ var fulfillmentRequest = function(request, response) {
 							"description":"This is a description of a carousel item",
 							"image":
 							{
-							  "url":"https://developers.google.com/actions/images/badges/XPM_BADGING_GoogleAssistant_VER.png",
+							  "url":"https://www.aircanada.com/content/dam/aircanada/portal/images/content-images/plan/baggage/std-article.png",
 							  "accessibilityText":"Image alternate text"
 							}
 						      },
@@ -200,7 +200,7 @@ var fulfillmentRequest = function(request, response) {
 							"description":"Google Home is a voice-activated speaker powered by the Google Assistant.",
 							"image":
 							{
-							  "url":"https://lh3.googleusercontent.com/Nu3a6F80WfixUqf_ec_vgXy_c0-0r4VLJRXjVFF_X_CIilEu8B9fT35qyTEj_PEsKw",
+							  "url":"https://www.aircanada.com/content/dam/aircanada/portal/images/content-images/plan/baggage/personal-article.png",
 							  "accessibilityText":"Google Home"
 							}
 						      }
