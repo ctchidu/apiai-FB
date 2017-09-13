@@ -151,8 +151,8 @@ var fulfillmentRequest = function(request, response) {
 			 if(jsonData[i].NAME == splItems){
 				 var a = false;
 				 var json = {
-						  "speech": jsonData[i].DESCRIPTION,
-						  "displayText": jsonData[i].DESCRIPTION,
+						  "speech": jsonData[i].DESCRIPTION.concat(jsonData[i].LINK),
+						  "displayText": jsonData[i].DESCRIPTION.concat(jsonData[i].LINK),
 						  "data": {
 						    "google": {
 						      "expectUserResponse": true,
