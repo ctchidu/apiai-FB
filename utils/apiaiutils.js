@@ -59,7 +59,6 @@ function convertToJSON(array) {
 
 var fulfillmentRequest = function(request, response) {
     var body = request.body;
-	console.log(request);
     if (!body | !body.result.action) {
         console.log('missing action in request.');
     } else {
