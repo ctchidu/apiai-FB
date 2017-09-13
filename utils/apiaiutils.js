@@ -167,8 +167,9 @@ var fulfillmentRequest = function(request, response) {
 		case 'status':
 			
 			var snumber = body.result.parameters.snumber;
-			var str,finalresult;
 			
+			var str,finalresult;
+			if(snumber){
 			for(i = 0; i < statusData.length; i++){
 			
 				if(statusData[i].bagtag_id == snumber){
@@ -216,7 +217,7 @@ var fulfillmentRequest = function(request, response) {
   }
 };
 
-			
+			}	
 			response.json(finalresult);
 			break;
 			
