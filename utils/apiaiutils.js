@@ -150,7 +150,42 @@ var fulfillmentRequest = function(request, response) {
      
 			 if(jsonData[i].NAME == splItems){
 				 var a = false;
-				 var json = formatApiaiResponse(speech = jsonData[i].DESCRIPTION,displayText = jsonData[i].DESCRIPTION)
+				 var json = {
+						  "speech": jsonData[i].DESCRIPTION,
+						  "displayText": jsonData[i].DESCRIPTION,
+						  "data": {
+						    "google": {
+						      "expectUserResponse": true,
+						      "isSsml": false,
+						      "noInputPrompts": [],
+						      "richResponse": {
+							"items": [
+							  {
+							    "simpleResponse": {
+							      "textToSpeech": jsonData[i].DETAIL
+							    }
+							  },
+							  {
+							    "basicCard": {
+							      "title": "",
+							      "subtitle": "",
+							      "formattedText": jsonData[i].DESCRIPTION,
+							      "image": {},
+							      "buttons": [
+								{
+								  "title": "Check here for more details",
+								  "openUrlAction": {
+								    "url": jsonData[i].LINK
+								  }
+								}
+							      ]
+							    }
+							  }
+							]
+						      }
+							}
+						  }
+						};
 				 response.json(json);
              			 break;
 				 }	 
