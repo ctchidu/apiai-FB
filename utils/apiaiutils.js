@@ -144,16 +144,13 @@ var fulfillmentRequest = function(request, response) {
 						"suggestions":
 						[
 						  {
-						    "title":"Basic Card"
+						    "title":"Sports"
 						  },
 						  {
-						    "title":"List"
+						    "title":"Music"
 						  },
 						  {
-						    "title":"Carousel"
-						  },
-						  {
-						    "title":"Suggestions"
+						    "title":"Hunting"
 						  }
 						]
 					      },
