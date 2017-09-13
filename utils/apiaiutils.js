@@ -176,7 +176,7 @@ var fulfillmentRequest = function(request, response) {
 							  ]
 							},
 							"title":"Standard Article",
-							"description":"Regardless of your destination, you can bring + 1 standard article.For more queries on specific items kindly click above.",
+							"description":"Regardless of your destination, you can bring 1 standard article. Kindly click above for more queries.",
 							"image":
 							{
 							  "url":"https://www.aircanada.com/content/dam/aircanada/portal/images/content-images/plan/baggage/std-article.png",
@@ -194,7 +194,7 @@ var fulfillmentRequest = function(request, response) {
 							  ]
 							},
 							"title":"Personal Article",
-							"description":"Regardless of your destination, you can bring + 1 personal article..For more queries on specific items kindly click above.",
+							"description":"Regardless of your destination, you can bring 1 personal article. Kindly click above for more queries.",
 							"image":
 							{
 							  "url":"https://www.aircanada.com/content/dam/aircanada/portal/images/content-images/plan/baggage/personal-article.png",
