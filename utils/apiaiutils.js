@@ -96,7 +96,42 @@ var fulfillmentRequest = function(request, response) {
 			
 		for(i = 0; i < jsonData.length; i++){
 		 if((jsonData[i].COUNTRY == locationcountry) && (jsonData[i].ALTITUDE == frequentfly) && (jsonData[i].CLASS == travelclass)){	
-			      str = formatApiaiResponse(speech = jsonData[i].FARE,displayText = jsonData[i].FARE);	 			 
+			      					  str  = {
+						  "speech": jsonData[i].FARE,
+						  "displayText": jsonData[i].FARE,
+						  "data": {
+						    "google": {
+						      "expectUserResponse": true,
+						      "isSsml": false,
+						      "noInputPrompts": [],
+						      "richResponse": {
+							"items": [
+							  {
+							    "simpleResponse": {
+							      "textToSpeech": "Baggage fare"
+							    }
+							  },
+							  {
+							    "basicCard": {
+							      "title": "",
+							      "subtitle": "",
+							      "formattedText": jsonData[i].FARE,
+							      "image": {},
+							      "buttons": [
+								{
+								  "title": "Read more",
+								  "openUrlAction": {
+								    "url": "https://www.aircanada.com/ca/en/aco/home.html"
+								  }
+								}
+							      ]
+							    }
+							  }
+							]
+						      }
+							}
+						  }
+						};	 			 
 			 }				 
 		  }
 									
