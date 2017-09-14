@@ -115,7 +115,7 @@ var fulfillmentRequest = function(request, response) {
 							    "basicCard": {
 							      "title": "",
 							      "subtitle": "",
-							      "formattedText": jsonData[i].GOOGLE,
+							      "formattedText": "This is a basic card.  Text in a\n basic card can include \"quotes\" and most other unicode characters\n      including emoji 📱.  Basic cards also support some markdown\n      formatting like *emphasis* or _italics_, **strong** or __bold__,\n      and ***bold itallic*** or ___strong emphasis___ as well as other things\n      like line  \nbreaks",
 							      "image": {},
 							      "buttons": [
 								{
