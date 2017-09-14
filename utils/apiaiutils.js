@@ -403,8 +403,8 @@ var fulfillmentRequest = function(request, response) {
           },
 		      {
       "simpleResponse": {
-        "textToSpeech":"To make any changes to delivery schedule, I can connect you with our Cutomer Representative.Do you want to proceed ?",
-        "displayText":"To make any changes to delivery schedule, I can connect you with our Cutomer Representative.Do you want to proceed ?"
+        "textToSpeech":"To make any changes to delivery schedule, I can connect you with our Customer Representative.Do you want to proceed ?",
+        "displayText":"To make any changes to delivery schedule, I can connect you with our Customer Representative.Do you want to proceed ?"
       }
     }
 		  
