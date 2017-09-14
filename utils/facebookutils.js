@@ -21,7 +21,7 @@ var handleFacebookTextMessage = function(event) {
         req_bot.on('response', function(response_bot) {
             var text = response_bot.result.fulfillment.speech;
             var action = response_bot.result.action;
-
+console.log('facebook');
 		        if((text == 'May I know which country you are travelling to ? Canada or US or Mexico/Caribbean or International') && (action == 'baggagefare')){
 			let messageData = {
 					  "recipient":{
@@ -155,7 +155,7 @@ var handleFacebookTextMessage = function(event) {
 		
 		
 		else{
-		
+		console.log('google');
             replyMessage(sender_id, response_bot.result.fulfillment);
 		}	
         });
