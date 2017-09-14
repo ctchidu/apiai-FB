@@ -105,23 +105,6 @@ var fulfillmentRequest = function(request, response) {
 
 		var allitems = body.result.parameters.allitems;
 		var typeofbaggage = body.result.parameters.typeofbaggage;	
-		if(allitems == 'sports'){
-                        var str = fs.readFileSync('./sportsallitems.txt', 'utf8');
-                        var json = formatApiaiResponse(speech = str,displayText = str)
-                    }
-                if(allitems == 'music'){
-                        var str = fs.readFileSync('./music.txt', 'utf8');
-                        var json = formatApiaiResponse(speech = str,displayText = str)
-                    }
-                if(allitems == 'hunting'){
-                        var str = fs.readFileSync('./hunting.txt', 'utf8');
-                        var json = formatApiaiResponse(speech = str,displayText = str)
-                    }
-
-                if(allitems == 'restricted'){
-                        var str = fs.readFileSync('./restricted.txt', 'utf8');
-                        var json = formatApiaiResponse(speech = str,displayText = str)
-                    }
 		if(allitems == 'carry on baggage'){
                         var str = fs.readFileSync('./carryon.txt', 'utf8');
                         var json = {
@@ -209,6 +192,61 @@ var fulfillmentRequest = function(request, response) {
 					  }
 					};
                     }	
+			else{
+			    
+				parseXlsx('ALLITEMS.xlsx', function(err, data) {
+					
+			var jsonData = JSON.parse(JSON.stringify(convertToJSON(data)));
+					
+			for(i = 0; i < jsonData.length; i++){
+			
+				if(jsonData[i].ALLITEMS == allitems ){
+					 var json = {
+						  "speech": jsonData[i].DESCRIPTION.concat(jsonData[i].LINK),
+						  "displayText": jsonData[i].DESCRIPTION.concat(jsonData[i].LINK),
+						  "data": {
+						    "google": {
+						      "expectUserResponse": true,
+						      "isSsml": false,
+						      "noInputPrompts": [],
+						      "richResponse": {
+							"items": [
+							  {
+							    "simpleResponse": {
+							      "textToSpeech": jsonData[i].DETAIL
+							    }
+							  },
+							  {
+							    "basicCard": {
+							      "title": "",
+							      "subtitle": "",
+							      "formattedText": jsonData[i].DESCRIPTION,
+							      "image": {},
+							      "buttons": [
+								{
+								  "title": "Check here for more details",
+								  "openUrlAction": {
+								    "url": jsonData[i].LINK
+								  }
+								}
+							      ]
+							    }
+							  }
+							]
+						      }
+							}
+						  }
+						};
+					
+				}
+				
+			}
+
+
+});
+			    
+			    
+		    }
                 response.json(json);
                 break;   
                 
