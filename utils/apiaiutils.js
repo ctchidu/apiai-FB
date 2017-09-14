@@ -48,7 +48,7 @@ function convertToJSON(array) {
 	 statusData =[
 				{
 					"bagtag_id": "1234567890",
-					"status" : "Your bag is reaching Montreal @ 6 AM tomorrow and will be delivered at given address by 9 AM tomorrow.To make any changes to delivery schedule, I can connect you with our Cutomer Representative.Do you want to proceed ?"
+					"status" : "Your bag is reaching Montreal @ 6 AM tomorrow and will be delivered at given address by 9 AM tomorrow."
 				},
 				{
 					"bagtag_id" : "3651201478",
@@ -370,7 +370,7 @@ var fulfillmentRequest = function(request, response) {
 				
 			}
 				
-			finalresult = {
+						finalresult = {
   "speech": str,
   "displayText": str,
   "data": {
@@ -400,7 +400,15 @@ var fulfillmentRequest = function(request, response) {
                 }
               ]
             }
-          }
+          },
+		      {
+      "simpleResponse": {
+        "textToSpeech":"To make any changes to delivery schedule, I can connect you with our Cutomer Representative.Do you want to proceed ?",
+        "displayText":"To make any changes to delivery schedule, I can connect you with our Cutomer Representative.Do you want to proceed ?"
+      }
+    }
+		  
+		  
         ]
       }
 	}
