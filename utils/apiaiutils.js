@@ -226,7 +226,7 @@ var fulfillmentRequest = function(request, response) {
 							      "image": {},
 							      "buttons": [
 								{
-								  "title": "Check here for more details",
+								  "title": "Read more",
 								  "openUrlAction": {
 								    "url": allData[i].LINK
 								  }
@@ -294,7 +294,7 @@ var fulfillmentRequest = function(request, response) {
 							      "image": {},
 							      "buttons": [
 								{
-								  "title": "Check here for more details",
+								  "title": "Read more",
 								  "openUrlAction": {
 								    "url": jsonData[i].LINK
 								  }
@@ -358,7 +358,7 @@ var fulfillmentRequest = function(request, response) {
               "image": {},
               "buttons": [
                 {
-                  "title": "Check here for more details",
+                  "title": "Read more",
                   "openUrlAction": {
                     "url": "https://www.aircanada.com/ca/en/aco/home/plan/baggage/delayed-damaged-baggage.html"
                   }
