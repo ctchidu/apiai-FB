@@ -121,7 +121,7 @@ var fulfillmentRequest = function(request, response) {
 								{
 								  "title": "Read more",
 								  "openUrlAction": {
-								    "url": "https://www.aircanada.com/ca/en/aco/home.html"
+								    "url": "https://www.aircanada.com/ca/en/aco/home/plan/baggage/checked.html"
 								  }
 								}
 							      ]
