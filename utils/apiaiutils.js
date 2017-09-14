@@ -2,7 +2,7 @@
 fs = require('fs')
 var parseXlsx = require('excel')
 var config = require('../config.js').getConfig();
-var jsonData,statusData;
+var jsonData,statusData,allData;
 
 
 function formatApiaiResponse(speech, displayText) {
@@ -37,7 +37,12 @@ function convertToJSON(array) {
 
 	  	parseXlsx('BAG_FARE_DATA.xlsx', function(err, data) {			
 		 jsonData = JSON.parse(JSON.stringify(convertToJSON(data)));
-		console.log('getting data');	
+		console.log('getting bag fare');	
+		});
+
+	  	parseXlsx('ALLITEMS.xlsx', function(err, data) {			
+		 allData = JSON.parse(JSON.stringify(convertToJSON(data)));
+		console.log('getting allData');	
 		});
 
 	 statusData =[
@@ -193,17 +198,14 @@ var fulfillmentRequest = function(request, response) {
 					};
                     }	
 			else{
-			    
-				parseXlsx('ALLITEMS.xlsx', function(err, data) {
+			    					
 					
-			var jsonData = JSON.parse(JSON.stringify(convertToJSON(data)));
-					
-			for(i = 0; i < jsonData.length; i++){
+			for(i = 0; i < allData.length; i++){
 			
-				if(jsonData[i].ALLITEMS == allitems ){
+				if(allData[i].ALLITEMS == allitems ){
 					 var json = {
-						  "speech": jsonData[i].DESCRIPTION.concat(jsonData[i].LINK),
-						  "displayText": jsonData[i].DESCRIPTION.concat(jsonData[i].LINK),
+						  "speech": allData[i].DESCRIPTION.concat(allData[i].LINK),
+						  "displayText": allData[i].DESCRIPTION.concat(allData[i].LINK),
 						  "data": {
 						    "google": {
 						      "expectUserResponse": true,
@@ -213,20 +215,20 @@ var fulfillmentRequest = function(request, response) {
 							"items": [
 							  {
 							    "simpleResponse": {
-							      "textToSpeech": jsonData[i].DETAIL
+							      "textToSpeech": allData[i].DETAIL
 							    }
 							  },
 							  {
 							    "basicCard": {
 							      "title": "",
 							      "subtitle": "",
-							      "formattedText": jsonData[i].DESCRIPTION,
+							      "formattedText": allData[i].DESCRIPTION,
 							      "image": {},
 							      "buttons": [
 								{
 								  "title": "Check here for more details",
 								  "openUrlAction": {
-								    "url": jsonData[i].LINK
+								    "url": allData[i].LINK
 								  }
 								}
 							      ]
@@ -243,7 +245,6 @@ var fulfillmentRequest = function(request, response) {
 			}
 
 
-});
 			    
 			    
 		    }
