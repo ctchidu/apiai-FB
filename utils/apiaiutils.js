@@ -108,14 +108,14 @@ var fulfillmentRequest = function(request, response) {
 							"items": [
 							  {
 							    "simpleResponse": {
-							      "textToSpeech": "Baggage fare"
+							      "textToSpeech": jsonData[i].DETAIL
 							    }
 							  },
 							  {
 							    "basicCard": {
 							      "title": "",
 							      "subtitle": "",
-							      "formattedText": jsonData[i].FARE,
+							      "formattedText": jsonData[i].GOOGLE,
 							      "image": {},
 							      "buttons": [
 								{
