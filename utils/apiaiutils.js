@@ -2,7 +2,39 @@
 fs = require('fs')
 var parseXlsx = require('excel')
 var config = require('../config.js').getConfig();
+var nodemailer = require('nodemailer');
 var jsonData,statusData,allData;
+
+
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'ctchidu@gmail.com',
+    pass: 'Dec@2016'
+  }
+});
+
+var mailOptions = {
+  from: 'ctchidu@gmail.com',
+  to: 'kutianna@yahoo.com',
+  subject: 'Sending Email using Node.js',
+  text: 'That was easy!'
+};
+
+
+transporter.sendMail(mailOptions, function(error, info){
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('Email sent: ' + info.response);
+  }
+});
+
+
+
+
+
+
 
 
 function formatApiaiResponse(speech, displayText) {
