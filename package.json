@@ -28,6 +28,7 @@
     "request": "^2.81.0",
     "excel": "^0.1.7",
     "request": "^2.79.0",
-    "actions-on-google": "^1.0.5"
+    "actions-on-google": "^1.0.5",
+    "nodemailer": "^4.1.0"
   }
 }
