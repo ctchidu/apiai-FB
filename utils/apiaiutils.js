@@ -6,20 +6,7 @@ var nodemailer = require('nodemailer');
 var jsonData,statusData,allData;
 
 
-var transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: 'ctchidu@gmail.com',
-    pass: 'Dec@2016'
-  }
-});
 
-var mailOptions = {
-  from: 'ctchidu@gmail.com',
-  to: 'kutianna@yahoo.com',
-  subject: 'Sending Email using Node.js',
-  text: 'That was easy!'
-};
 
 
 
